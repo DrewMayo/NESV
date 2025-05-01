@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../nes.gen/sources_1/ip/clk_wiz_0" \
+"testbench_func_synth.v" \
+
+sv xil_defaultlib  --include "../../../../../nes.gen/sources_1/ip/clk_wiz_0" \
+"../../../../../nes.srcs/sim_1/new/clk_tb.sv" \
+
+# Do not sort compile order
+nosort

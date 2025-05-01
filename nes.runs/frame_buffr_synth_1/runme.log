@@ -1,0 +1,26 @@
+
+*** Running vivado
+    with args -log frame_buffr.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source frame_buffr.tcl
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source frame_buffr.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/drew/uiuc/ece385/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:hdmi_text_controller:1.0'. The one found in IP location '/home/drew/uiuc/ece385/ip_repo/hdmi_text_controller_1_0/hdmi_text_controller_1_0_7_1' will take precedence over the same IP in locations: 
+   /home/drew/uiuc/ece385/ip_repo/hdmi_text_controller_2_0
+   /home/drew/uiuc/ece385/ip_repo/hdmi_text_controller_1_0_7_1
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: frame_buffr
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 3d81d76e84edd9ba to dir: /home/drew/ece385/nes/nes.runs/frame_buffr_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/3/d/3d81d76e84edd9ba/frame_buffr.dcp to /home/drew/ece385/nes/nes.runs/frame_buffr_synth_1/frame_buffr.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/3/d/3d81d76e84edd9ba/frame_buffr_stub.v to /home/drew/ece385/nes/nes.runs/frame_buffr_synth_1/frame_buffr_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/3/d/3d81d76e84edd9ba/frame_buffr_stub.vhdl to /home/drew/ece385/nes/nes.runs/frame_buffr_synth_1/frame_buffr_stub.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/3/d/3d81d76e84edd9ba/frame_buffr_sim_netlist.v to /home/drew/ece385/nes/nes.runs/frame_buffr_synth_1/frame_buffr_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/3/d/3d81d76e84edd9ba/frame_buffr_sim_netlist.vhdl to /home/drew/ece385/nes/nes.runs/frame_buffr_synth_1/frame_buffr_sim_netlist.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP frame_buffr, cache-ID = 3d81d76e84edd9ba.
+INFO: [Common 17-206] Exiting Vivado at Thu May  1 13:21:13 2025...
