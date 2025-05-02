@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1746168124">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1746175552">
   <File Type="ROUTE-PWR" Name="nes_power_routed.rpt"/>
   <File Type="PA-TCL" Name="nes.tcl"/>
   <File Type="BITSTR-MMI" Name="nes.mmi"/>
@@ -304,6 +304,14 @@
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/nes.xdc">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/constrs_1/imports/pin_assignment/mb_usb_hdmi_top.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../Downloads/lab6_2_provided_/pin_assignment/mb_usb_hdmi_top.xdc"/>
+        <Attr Name="ImportTime" Val="1746173914"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>

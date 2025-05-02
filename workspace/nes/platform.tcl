@@ -18,3 +18,6 @@ platform generate -domains
 platform active {nes}
 platform generate -quick
 platform generate
+platform active {nes}
+platform config -updatehw {C:/Users/Mark/Documents/NESV/NESV/nes.xsa}
+platform generate -domains 

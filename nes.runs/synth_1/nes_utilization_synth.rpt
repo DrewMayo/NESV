@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Fri May  2 01:41:13 2025
+| Date         : Fri May  2 03:46:49 2025
 | Host         : DESKTOP-36ONVEV running 64-bit major release  (build 9200)
 | Command      : report_utilization -file nes_utilization_synth.rpt -pb nes_utilization_synth.pb
 | Design       : nes
@@ -94,7 +94,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    8 |     0 |          0 |       210 |  3.81 |
+| Bonded IOB                  |    9 |     0 |          0 |       210 |  4.29 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         5 |  0.00 |
@@ -160,8 +160,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 | LUT1     |   31 |                 LUT |
 | FDPE     |   22 |        Flop & Latch |
 | MUXF7    |   10 |               MuxFx |
-| OBUFT    |    5 |                  IO |
-| IBUF     |    3 |                  IO |
+| OBUF     |    5 |                  IO |
+| IBUF     |    4 |                  IO |
 | SRL16E   |    2 |  Distributed Memory |
 | MUXF8    |    1 |               MuxFx |
 | LDCE     |    1 |        Flop & Latch |

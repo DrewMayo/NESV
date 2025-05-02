@@ -3,6 +3,8 @@
 
 # XDC: new/nes.xdc
 
+# XDC: imports/pin_assignment/mb_usb_hdmi_top.xdc
+
 # IP: ip/pgr_rom/pgr_rom.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pgr_rom || ORIG_REF_NAME==pgr_rom} -quiet] -quiet
 

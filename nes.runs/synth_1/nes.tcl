@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -203,6 +202,9 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 read_xdc C:/Users/Mark/Documents/NESV/NESV/nes.srcs/constrs_1/new/nes.xdc
 set_property used_in_implementation false [get_files C:/Users/Mark/Documents/NESV/NESV/nes.srcs/constrs_1/new/nes.xdc]
+
+read_xdc C:/Users/Mark/Documents/NESV/NESV/nes.srcs/constrs_1/imports/pin_assignment/mb_usb_hdmi_top.xdc
+set_property used_in_implementation false [get_files C:/Users/Mark/Documents/NESV/NESV/nes.srcs/constrs_1/imports/pin_assignment/mb_usb_hdmi_top.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

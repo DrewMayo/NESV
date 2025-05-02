@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="frame_buffr_synth_1" LaunchPart="xc7s50csga324-1" LaunchTime="1746165978">
   <File Type="PA-TCL" Name="frame_buffr.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="frame_buffr_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="frame_buffr_reports.tcl"/>
   <File Type="RDS-RDS" Name="frame_buffr.vds"/>
-  <File Type="RDS-UTIL" Name="frame_buffr_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="frame_buffr_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="frame_buffr.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="frame_buffr_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="frame_buffr_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/frame_buffr">
     <File Path="$PSRCDIR/sources_1/ip/frame_buffr_1/frame_buffr.xci">
       <FileInfo>

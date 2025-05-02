@@ -1,6 +1,6 @@
-02:13:05 **** Build of configuration Debug for project nesv_system ****
+03:52:13 **** Incremental Build of configuration Debug for project nesv_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
 
-02:13:05 Build Finished (took 173ms)
+03:52:14 Build Finished (took 199ms)
 

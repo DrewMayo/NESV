@@ -1,6 +1,7 @@
-2025-05-02T02:13:00.044965700255-02:13:00 **** Build of project nes ****
-000-buildplatform.bat 57863 nes  
-000-XSDB Server Channel: tcfchan#2
+2025-05-02T03:52:06.555618300255-03:52:06 **** Incremental Build of project nes ****
+000-buildplatform.bat 58488 nes no_domain_build 
+000-XSDB Server Channel: tcfchan#1
+000-C:/Xilinx/Vitis/2022.2/gnu/microblaze/nt
 000-Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 000-make --no-print-directory seq_libs
 000-
@@ -144,5 +145,5 @@
 000-'Finished building libraries'
 000-
 00255-
-02:13:03 Build Finished (took 3s.305ms)
+03:52:10 Build Finished (took 4s.24ms)
 

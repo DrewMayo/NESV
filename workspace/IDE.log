@@ -181,3 +181,135 @@ con
 
 02:18:43 INFO  : Disconnected from the channel tcfchan#5.
 02:19:11 WARN  : channel "tcfchan#3" closed
+03:36:08 DEBUG : Logs will be stored at 'C:/Users/Mark/Documents/NESV/NESV/workspace/IDE.log'.
+03:36:08 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Mark\Documents\NESV\NESV\workspace\temp_xsdb_launch_script.tcl
+03:36:10 INFO  : XSCT server has started successfully.
+03:36:10 INFO  : plnx-install-location is set to ''
+03:36:10 INFO  : Successfully done setting XSCT server connection channel  
+03:36:10 INFO  : Successfully done setting workspace for the tool. 
+03:36:11 INFO  : Platform repository initialization has completed.
+03:36:11 INFO  : Successfully done query RDI_DATADIR 
+03:36:11 INFO  : Registering command handlers for Vitis TCF services
+03:36:25 INFO  : Checking for BSP changes to sync application flags for project 'nesv'...
+03:36:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:36:51 INFO  : Jtag cable 'RealDigital Boo 88710000000EA' is selected.
+03:36:51 INFO  : 'jtag frequency' command is executed.
+03:36:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88710000000EA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+03:36:53 INFO  : Device configured successfully with "C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/_ide/bitstream/nes.bit"
+03:36:53 INFO  : Context for processor 'microblaze_0' is selected.
+03:36:53 INFO  : Hardware design and registers information is loaded from 'C:/Users/Mark/Documents/NESV/NESV/workspace/nes/export/nes/hw/nes.xsa'.
+03:36:53 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+03:36:53 INFO  : Context for processor 'microblaze_0' is selected.
+03:36:53 INFO  : System reset is completed.
+03:36:56 INFO  : 'after 3000' command is executed.
+03:36:56 INFO  : Context for processor 'microblaze_0' is selected.
+03:36:56 INFO  : The application 'C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/Debug/nesv.elf' is downloaded to processor 'microblaze_0'.
+03:36:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88710000000EA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/_ide/bitstream/nes.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Mark/Documents/NESV/NESV/workspace/nes/export/nes/hw/nes.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/Debug/nesv.elf
+----------------End of Script----------------
+
+03:36:56 INFO  : Context for processor 'microblaze_0' is selected.
+03:36:56 INFO  : 'con' command is executed.
+03:36:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+03:36:56 INFO  : Disconnected from the channel tcfchan#1.
+03:37:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:37:37 INFO  : Jtag cable 'RealDigital Boo 88710000000EA' is selected.
+03:37:37 INFO  : 'jtag frequency' command is executed.
+03:37:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88710000000EA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+03:37:39 INFO  : Device configured successfully with "C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/_ide/bitstream/nes.bit"
+03:37:39 INFO  : Context for processor 'microblaze_0' is selected.
+03:37:39 INFO  : Hardware design and registers information is loaded from 'C:/Users/Mark/Documents/NESV/NESV/workspace/nes/export/nes/hw/nes.xsa'.
+03:37:39 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+03:37:39 INFO  : Context for processor 'microblaze_0' is selected.
+03:37:39 INFO  : System reset is completed.
+03:37:42 INFO  : 'after 3000' command is executed.
+03:37:42 INFO  : Context for processor 'microblaze_0' is selected.
+03:37:42 INFO  : The application 'C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/Debug/nesv.elf' is downloaded to processor 'microblaze_0'.
+03:37:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88710000000EA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/_ide/bitstream/nes.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Mark/Documents/NESV/NESV/workspace/nes/export/nes/hw/nes.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/Debug/nesv.elf
+----------------End of Script----------------
+
+03:37:42 INFO  : Context for processor 'microblaze_0' is selected.
+03:37:42 INFO  : 'con' command is executed.
+03:37:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+03:37:42 INFO  : Disconnected from the channel tcfchan#2.
+03:51:45 DEBUG : Logs will be stored at 'C:/Users/Mark/Documents/NESV/NESV/workspace/IDE.log'.
+03:51:46 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\Mark\Documents\NESV\NESV\workspace\temp_xsdb_launch_script.tcl
+03:51:48 INFO  : XSCT server has started successfully.
+03:51:48 INFO  : Successfully done setting XSCT server connection channel  
+03:51:48 INFO  : plnx-install-location is set to ''
+03:51:48 INFO  : Successfully done setting workspace for the tool. 
+03:51:49 INFO  : Platform repository initialization has completed.
+03:51:49 INFO  : Registering command handlers for Vitis TCF services
+03:51:49 INFO  : Successfully done query RDI_DATADIR 
+03:52:01 INFO  : Hardware specification for platform project 'nes' is updated.
+03:52:10 INFO  : Result from executing command 'getProjects': nes
+03:52:10 INFO  : Result from executing command 'getPlatforms': nes|C:/Users/Mark/Documents/NESV/NESV/workspace/nes/export/nes/nes.xpfm
+03:52:10 INFO  : Checking for BSP changes to sync application flags for project 'nesv'...
+03:52:13 INFO  : The hardware specification used by project 'nesv' is out of sync with the platform. Resource files extracted from the hardware specification will be updated.
+03:52:13 INFO  : The file 'C:\Users\Mark\Documents\NESV\NESV\workspace\nesv\_ide\bitstream\nes.bit' stored in project is removed.
+03:52:13 INFO  : The file 'C:\Users\Mark\Documents\NESV\NESV\workspace\nesv\_ide\bitstream\nes.mmi' stored in project is removed.
+03:52:13 INFO  : The updated bitstream files are copied from platform to folder 'C:\Users\Mark\Documents\NESV\NESV\workspace\nesv\_ide\bitstream' in project 'nesv'.
+03:52:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+03:52:21 INFO  : Jtag cable 'RealDigital Boo 88710000000EA' is selected.
+03:52:21 INFO  : 'jtag frequency' command is executed.
+03:52:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88710000000EA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}' command is executed.
+03:52:22 INFO  : Device configured successfully with "C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/_ide/bitstream/nes.bit"
+03:52:22 INFO  : Context for processor 'microblaze_0' is selected.
+03:52:22 INFO  : Hardware design and registers information is loaded from 'C:/Users/Mark/Documents/NESV/NESV/workspace/nes/export/nes/hw/nes.xsa'.
+03:52:22 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+03:52:22 INFO  : Context for processor 'microblaze_0' is selected.
+03:52:22 INFO  : System reset is completed.
+03:52:25 INFO  : 'after 3000' command is executed.
+03:52:25 INFO  : Context for processor 'microblaze_0' is selected.
+03:52:26 INFO  : The application 'C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/Debug/nesv.elf' is downloaded to processor 'microblaze_0'.
+03:52:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "RealDigital Boo 88710000000EA" && level==0 && jtag_device_ctx=="jsn1-0362f093-0"}
+fpga -file C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/_ide/bitstream/nes.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/Mark/Documents/NESV/NESV/workspace/nes/export/nes/hw/nes.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/Mark/Documents/NESV/NESV/workspace/nesv/Debug/nesv.elf
+----------------End of Script----------------
+
+03:52:26 INFO  : Context for processor 'microblaze_0' is selected.
+03:52:26 INFO  : 'con' command is executed.
+03:52:26 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+03:52:26 INFO  : Disconnected from the channel tcfchan#2.

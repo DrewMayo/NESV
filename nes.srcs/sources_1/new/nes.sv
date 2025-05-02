@@ -140,8 +140,18 @@ controller controller(
     //inputs
     .Clk(Clk_buf),
     .reset_rtl_0(reset_rtl_0),
+    
+    //USB signals
     .gpio_usb_int_tri_i(gpio_usb_int_tri_i),
+    .gpio_usb_rst_tri_o(gpio_usb_rst_tri_o),
     .usb_spi_miso(usb_spi_miso),
+    .usb_spi_mosi(usb_spi_mosi),
+    .usb_spi_sclk(usb_spi_sclk),
+    .usb_spi_ss(usb_spi_ss),
+    
+    .uart_rtl_0_rxd(uart_rtl_0_rxd),
+    .uart_rtl_0_txd(uart_rtl_0_txd),
+
     .cpu_data_in(data_out),
     .cpu_addr(addr),
     .R_W_n(write_n),
