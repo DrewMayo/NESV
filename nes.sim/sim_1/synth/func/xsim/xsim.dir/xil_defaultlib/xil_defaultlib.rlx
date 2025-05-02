@@ -1,6 +1,0 @@
-0.7
-2020.2
-Oct 14 2022
-05:07:14
-/home/drew/uiuc/ece385/nes/nes.sim/sim_1/synth/func/xsim/testbench_func_synth.v,1744565752,verilog,,,,T65;T65_ALU;cpu_2A03;glbl,,uvm,../../../../../nes.gen/sources_1/ip/clk_wiz_0,,,,,
-/home/drew/uiuc/ece385/nes/nes.srcs/sim_1/new/clk_tb.sv,1744565727,systemVerilog,,,,testbench,,uvm,../../../../../nes.gen/sources_1/ip/clk_wiz_0,,,,,

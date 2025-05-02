@@ -1,7 +1,0 @@
-Running: xsim.dir/ppu_dk_behav/xsimk -simmode gui -wdb ppu_dk_behav.wdb -simrunnum 0 -socket 60183
-Design successfully loaded
-Design Loading Memory Usage: 32200 KB (Peak: 32200 KB)
-Design Loading CPU Usage: 40 ms
-Simulation completed
-Simulation Memory Usage: 122656 KB (Peak: 171468 KB)
-Simulation CPU Usage: 2508260 ms
