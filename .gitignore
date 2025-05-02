@@ -1,5 +1,6 @@
 nes.cache/
 nes.sim/
+nes.runs/
 .jou
 .log
 .xsa

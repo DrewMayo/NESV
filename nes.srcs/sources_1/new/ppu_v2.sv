@@ -107,7 +107,7 @@ logic [7:0] next_oamdma;
 logic ppustatus_read;
 logic next_ppustatus_read;
 
-logic next_nmi_n;
+
 
 logic [14:0] v;
 logic [14:0] t;
@@ -134,6 +134,10 @@ logic [8:0] next_nesX;
 logic [8:0] next_nesY;
 logic ppudata_write;
 logic next_ppudata_write;
+
+logic ppudata_read;
+logic next_ppudata_read;
+
 //state management
 logic [2:0] render_cycle;
 
@@ -143,6 +147,7 @@ always_comb begin
   // setup for the functions
   // ------------------------------
   logic [15:0] y;
+  next_ppudata_read = ppudata_read;
   next_ppuctrl = ppuctrl;
   next_ppumask = ppumask;
   next_ppustatus = ppustatus;
@@ -154,11 +159,12 @@ always_comb begin
   next_ppustatus_read = ppustatus_read;
   next_ppudata_write = ppudata_write;
   next_data_out = data_out;
+  next_ppudata_read = ppudata_read;
   next_v = v;
   next_t = t;
   next_x = x;
   next_w = w;
- 
+
 
   // -----------------------------------
   //              reset
@@ -180,6 +186,7 @@ always_comb begin
     next_x = 0;
     next_w = 0;
     next_ppudata_write = 0;
+    next_ppudata_read = 0;
 
   // ------------------------------
   //          reads/writes
@@ -202,11 +209,7 @@ always_comb begin
           end
           3'b111 : begin
             next_data_out = ppudata;
-            if (v_inc) begin
-              next_v += 32;
-            end else begin
-              next_v += 1;
-            end
+            next_ppudata_read = 1'b1;
           end
         endcase
     // WRITES
@@ -264,6 +267,10 @@ always_comb begin
     next_v += ((v_inc) ? 32 : 1);
     next_ppudata_write = 1'b0;
   end
+  if (ppudata_read) begin
+    next_v += ((v_inc) ? 32 : 1);
+    next_ppudata_read = 1'b0;
+  end
 
   // ------------------------------
   //            handle vblank
@@ -277,12 +284,7 @@ always_comb begin
   if ((nesX == 0 && nesY == 261) || ppustatus_read) begin
     next_ppustatus[7] = 1'b0;
   end
-  //handle interrupt
-  if (vblank && nmi_enable) begin
-    next_nmi_n = 1'b0;
-  end else begin
-    next_nmi_n = 1'b1;
-  end
+
 
   // -------------------------------------------
   //                  increments
@@ -314,7 +316,7 @@ always_comb begin
       next_v = (next_v & ~16'h03E0) | (y << 5);
     end
   end
-  if ((nesY < 240 || nesY == 261) && (nesX < 256 || (nesX > 320 && nesX < 337)) && (ppumask & 8'h18)) begin
+  if ((nesY < 240 || nesY == 261) && (nesX > 0  && nesX < 256 || (nesX > 320 && nesX < 337)) && (ppumask & 8'h18)) begin
     if (render_cycle == 3'b111) begin
       if ((v & 16'h001F) == 31) begin
         next_v &= ~16'h001F;
@@ -326,6 +328,45 @@ always_comb begin
   end
 end
 
+  // -----------------------------------------------
+  //                  render loop
+  // -----------------------------------------------
+  //
+  //    Handles the interrupts for the non-maskible interrupt
+  //    on the rising edge of vblank check for if it should generate
+  //    an interrupt. If so, it will when the vbank hits a rising edge.
+  //    This is very specific behavior
+
+
+logic next_nmi_n;
+logic [1:0] next_nmi_n_hold;
+logic [1:0] nmi_n_hold;
+logic vblank_prev;
+logic vblank_posedge;
+
+assign vblank_posedge = (vblank == 1'b1 && vblank_prev == 1'b0);
+
+always_comb begin
+  //handle interrupt
+  next_nmi_n = 1'b1;
+  
+  if (vblank_posedge && nmi_enable) begin
+    next_nmi_n_hold = 2'b11;
+    next_nmi_n = 1'b0;
+  end else if (nmi_n_hold > 0) begin
+    next_nmi_n_hold = nmi_n_hold - 1;
+    next_nmi_n = 1'b0;
+  end else begin
+    next_nmi_n = 1'b1;
+    next_nmi_n_hold = 2'b00;
+  end
+end
+
+always_ff @(posedge ppu_clk) begin
+    nmi_n <= next_nmi_n;
+    vblank_prev <= vblank;
+    nmi_n_hold <= next_nmi_n_hold;
+end
 
   // -----------------------------------------------
   //                  render loop
@@ -344,8 +385,8 @@ always_ff @(posedge ppu_clk) begin
   ppuaddr <= next_ppuaddr;
   ppudata <= next_ppudata;
   oamdma <= next_oamdma;
-  nmi_n <= next_nmi_n;
   ppudata_write <= next_ppudata_write;
+  ppudata_read <= next_ppudata_read;
   v <= next_v;
   t <= next_t;
   x <= next_x;
@@ -398,19 +439,18 @@ always_comb begin
     next_shift_reg_hi = 0;
     next_shift_reg_lo = 0;
   end
-  if ((nesY < 240 || nesY == 261) && ((nesX > 0 && nesX < 258) || (nesX > 320 && nesX < 337)) && (ppumask & 8'h18)) begin
-    next_shift_reg_lo = shift_reg_lo << 1;
-    next_shift_reg_hi = shift_reg_hi << 1;
+  if ((nesY < 240 || nesY == 261) && (nesX < 256 || (nesX > 320 && nesX < 337)) && (ppumask & 8'h18)) begin
     next_name_table_reg = name_table_reg;
     next_pt_lo_reg = pt_lo_reg;
     next_pt_hi_reg = pt_hi_reg;
     next_at_reg = at_reg;
     next_v_render = v_render;
+    next_shift_reg_lo = shift_reg_lo << 1;
+    next_shift_reg_hi = shift_reg_hi << 1;
     unique case (render_cycle)
       3'b000:
-      begin
-        next_shift_reg_hi = {next_shift_reg_hi[15:8], pt_hi_reg};
-        next_shift_reg_lo = {next_shift_reg_lo[15:8], pt_lo_reg};
+      begin 
+
         next_v_render = 16'h2000 | (v & 16'h0FFF);
       end
       3'b001:
@@ -443,6 +483,8 @@ always_comb begin
       3'b111:
       begin
         next_pt_hi_reg = mem_read;
+        next_shift_reg_hi = {shift_reg_hi[14:7], mem_read};
+        next_shift_reg_lo = {shift_reg_lo[14:7], pt_lo_reg};
         next_v_render = v_render;
       end
       default: begin
@@ -450,12 +492,13 @@ always_comb begin
       end
     endcase
   end
+
 end
 
 always_ff @(posedge ppu_clk) begin
   name_table_reg <= next_name_table_reg;
-  pt_hi_reg<= next_pt_hi_reg;
-  pt_lo_reg<= next_pt_lo_reg;
+  pt_hi_reg <= next_pt_hi_reg;
+  pt_lo_reg <= next_pt_lo_reg;
   v_render <= next_v_render;
   at_reg <= next_at_reg;
   shift_reg_hi <= next_shift_reg_hi;
@@ -499,7 +542,7 @@ logic nes_ena_wr;
 
 
 always_comb begin
-    v_mux = (nesX < 240 && (ppumask & 8'h18)) ? v_render : v;
+    v_mux = (nesY < 240 && (ppumask & 8'h18)) ? v_render : v;
     ppu_addr = v_mux;
     vram_wea = 1'b0;
     addra = (v_mux - 16'h2000) & 16'h07FF;

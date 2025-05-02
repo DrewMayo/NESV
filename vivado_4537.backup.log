@@ -1,0 +1,1381 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri May  2 08:07:27 2025
+# Process ID: 4537
+# Current directory: /home/drew/ece385/nes
+# Command line: vivado
+# Log file: /home/drew/ece385/nes/vivado.log
+# Journal file: /home/drew/ece385/nes/vivado.jou
+# Running On: mayoarch, OS: Linux, CPU Frequency: 1754.000 MHz, CPU Physical cores: 16, Host memory: 33569 MB
+#-----------------------------------------------------------
+start_gui
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.4/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.0/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.1/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at /tools/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project /home/drew/ece385/nes/nes.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/drew/uiuc/ece385/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [IP_Flow 19-1663] Duplicate IP found for 'user.org:user:hdmi_text_controller:1.0'. The one found in IP location '/home/drew/uiuc/ece385/ip_repo/hdmi_text_controller_1_0/hdmi_text_controller_1_0_7_1' will take precedence over the same IP in locations: 
+   /home/drew/uiuc/ece385/ip_repo/hdmi_text_controller_2_0
+   /home/drew/uiuc/ece385/ip_repo/hdmi_text_controller_1_0_7_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'cpu_nestest'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-13660] Precompiled IP simulation library mode is enabled (default). The design IP libraries will be referenced from the compiled library path. Please note that if the precompiled version of the library is not found from the path or the IP is in locked state, then the library source files for these IPs will be compiled locally as part of the compile order.
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'cpu_nestest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom_dk.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/frame_buffr.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/colors.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/pgr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom_dk.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/nestest.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/01.basics.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj cpu_nestest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/vram/sim/vram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/sim/chr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/sim/pgr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pgr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/cpu_ram/sim/cpu_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_1_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/clock.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pgr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ppu_v2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_nestest
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj cpu_nestest_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65_Pack.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/mister_core/T65_Pack.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65_MCode.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'T65_MCode'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'T65_ALU'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'T65'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    C_INCLUDE_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 15 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv:40]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 13 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv:31]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 11 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:542]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 11 for port 'addrb' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:549]
+WARNING: [VRFC 10-3823] variable 'A' might have multiple concurrent drivers [/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv:103]
+WARNING: [VRFC 10-5021] port 'clk_100Mhz' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv:76]
+WARNING: [VRFC 10-5021] port 'ef' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv:60]
+WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:541]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.t65_pack
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_1_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_1
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=30.87...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clock
+Compiling architecture rtl of entity xil_defaultlib.T65_MCode [t65_mcode_default]
+Compiling architecture rtl of entity xil_defaultlib.T65_ALU [t65_alu_default]
+Compiling architecture rtl of entity xil_defaultlib.T65 [t65_default]
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.cpu_ram
+Compiling module xil_defaultlib.cpu
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.pgr_rom
+Compiling module xil_defaultlib.pgr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.chr_rom
+Compiling module xil_defaultlib.chr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.vram
+Compiling module xil_defaultlib.ppu_v2
+Compiling module xil_defaultlib.nes
+Compiling module xil_defaultlib.cpu_nestest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_nestest_behav
+execute_script: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 6779.762 ; gain = 0.000 ; free physical = 18172 ; free virtual = 26207
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cpu_nestest_behav -key {Behavioral:sim_1:Functional:cpu_nestest} -tclbatch {cpu_nestest.tcl} -view {/home/drew/ece385/nes/nes_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/drew/ece385/nes/nes_behav.wcfg
+source cpu_nestest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+Block Memory Generator module cpu_nestest.nes_inst.cpu_inst.iram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.pgr_rom_inst.pgr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.chr_rom_inst.chr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+WARNING: File descriptor (-1) passed to $fwrite in file /home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65.vhd at line 635 is not valid.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clock_buf.inst.mmcm_adv_inst 
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clk_inst.clk_wiz_inst.inst.mmcm_adv_inst 
+WARNING: 279530255ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+WARNING: 307957138ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+blk_mem_gen_v8_4_5 collision detected at time: 333113271659, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: 12, B  read address: 12
+blk_mem_gen_v8_4_5 collision detected at time: 333990437651, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: 23, B  read address: 23
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:32 ; elapsed = 00:04:14 . Memory (MB): peak = 6779.762 ; gain = 0.000 ; free physical = 17435 ; free virtual = 25794
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:00:36 ; elapsed = 00:04:16 . Memory (MB): peak = 6779.762 ; gain = 0.000 ; free physical = 17435 ; free virtual = 25794
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:00:48 ; elapsed = 00:04:25 . Memory (MB): peak = 6779.762 ; gain = 0.000 ; free physical = 17435 ; free virtual = 25794
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 08:23:57 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 08:23:57 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 08:24:57 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 08:24:57 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2022.2
+  **** Build date : Oct 14 2022 at 05:10:28
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2022.2.0
+  ****** Build date   : Oct 04 2022-18:25:37
+    **** Build number : 2022.2.1664925937
+      ** Copyright 2017-2025 Xilinx, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/887100000000A
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+current_hw_device [get_hw_devices xc7s50_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+update_compile_order -fileset sources_1
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 123016 KB (Peak: 171468 KB), Simulation CPU Usage: 252650 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'cpu_nestest'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-13660] Precompiled IP simulation library mode is enabled (default). The design IP libraries will be referenced from the compiled library path. Please note that if the precompiled version of the library is not found from the path or the IP is in locked state, then the library source files for these IPs will be compiled locally as part of the compile order.
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'cpu_nestest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom_dk.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/frame_buffr.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/colors.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/pgr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom_dk.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/nestest.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/01.basics.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj cpu_nestest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/clock.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pgr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ppu_v2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_nestest
+xvhdl --incr --relax -prj cpu_nestest_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    C_INCLUDE_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 15 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv:40]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 13 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv:31]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 11 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:571]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 11 for port 'addrb' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:578]
+WARNING: [VRFC 10-3823] variable 'A' might have multiple concurrent drivers [/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv:103]
+WARNING: [VRFC 10-5021] port 'clk_100Mhz' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv:76]
+WARNING: [VRFC 10-5021] port 'ef' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv:60]
+WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:570]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.t65_pack
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_1_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_1
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=30.87...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clock
+Compiling architecture rtl of entity xil_defaultlib.T65_MCode [t65_mcode_default]
+Compiling architecture rtl of entity xil_defaultlib.T65_ALU [t65_alu_default]
+Compiling architecture rtl of entity xil_defaultlib.T65 [t65_default]
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.cpu_ram
+Compiling module xil_defaultlib.cpu
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.pgr_rom
+Compiling module xil_defaultlib.pgr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.chr_rom
+Compiling module xil_defaultlib.chr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.vram
+Compiling module xil_defaultlib.ppu_v2
+Compiling module xil_defaultlib.nes
+Compiling module xil_defaultlib.cpu_nestest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_nestest_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8955.137 ; gain = 0.000 ; free physical = 14789 ; free virtual = 23464
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cpu_nestest_behav -key {Behavioral:sim_1:Functional:cpu_nestest} -tclbatch {cpu_nestest.tcl} -view {/home/drew/ece385/nes/nes_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/drew/ece385/nes/nes_behav.wcfg
+source cpu_nestest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+Block Memory Generator module cpu_nestest.nes_inst.cpu_inst.iram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.pgr_rom_inst.pgr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.chr_rom_inst.chr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+WARNING: File descriptor (-1) passed to $fwrite in file /home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65.vhd at line 635 is not valid.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clock_buf.inst.mmcm_adv_inst 
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clk_inst.clk_wiz_inst.inst.mmcm_adv_inst 
+WARNING: 279530255ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+WARNING: 307957138ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+blk_mem_gen_v8_4_5 collision detected at time: 333113271659, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: 12, B  read address: 12
+blk_mem_gen_v8_4_5 collision detected at time: 333990437651, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: 23, B  read address: 23
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:34 ; elapsed = 00:07:53 . Memory (MB): peak = 8955.137 ; gain = 0.000 ; free physical = 14096 ; free virtual = 23113
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:00:35 ; elapsed = 00:07:54 . Memory (MB): peak = 8955.137 ; gain = 0.000 ; free physical = 14095 ; free virtual = 23112
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:00:47 ; elapsed = 00:08:02 . Memory (MB): peak = 8955.137 ; gain = 0.000 ; free physical = 14095 ; free virtual = 23112
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file '/home/drew/ece385/nes/code/gen_nes/prg_rom.coe' provided. It will be converted relative to IP Instance files '../../../../code/gen_nes/prg_rom.coe'
+set_property CONFIG.Coe_File {/home/drew/ece385/nes/code/gen_nes/prg_rom.coe} [get_ips pgr_rom]
+INFO: [IP_Flow 19-3484] Absolute path of file '/home/drew/ece385/nes/code/gen_nes/prg_rom.coe' provided. It will be converted relative to IP Instance files '../../../../code/gen_nes/prg_rom.coe'
+generate_target all [get_files  /home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'pgr_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pgr_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pgr_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'pgr_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'pgr_rom'...
+catch { config_ip_cache -export [get_ips -all pgr_rom] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: pgr_rom
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 664ec70b4769d5a9 to dir: /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/6/6/664ec70b4769d5a9/pgr_rom.dcp to /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/6/6/664ec70b4769d5a9/pgr_rom_stub.v to /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/6/6/664ec70b4769d5a9/pgr_rom_stub.vhdl to /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_stub.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/6/6/664ec70b4769d5a9/pgr_rom_sim_netlist.v to /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/6/6/664ec70b4769d5a9/pgr_rom_sim_netlist.vhdl to /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_sim_netlist.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP pgr_rom, cache-ID = 664ec70b4769d5a9; cache size = 14.418 MB.
+export_ip_user_files -of_objects [get_files /home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci'
+export_simulation -of_objects [get_files /home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci] -directory /home/drew/ece385/nes/nes.ip_user_files/sim_scripts -ip_user_files_dir /home/drew/ece385/nes/nes.ip_user_files -ipstatic_source_dir /home/drew/ece385/nes/nes.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/drew/ece385/nes/nes.cache/compile_simlib/modelsim} {questa=/home/drew/ece385/nes/nes.cache/compile_simlib/questa} {xcelium=/home/drew/ece385/nes/nes.cache/compile_simlib/xcelium} {vcs=/home/drew/ece385/nes/nes.cache/compile_simlib/vcs} {riviera=/home/drew/ece385/nes/nes.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file '/home/drew/ece385/nes/code/gen_nes/chr_rom.coe' provided. It will be converted relative to IP Instance files '../../../../code/gen_nes/chr_rom.coe'
+set_property CONFIG.Coe_File {/home/drew/ece385/nes/code/gen_nes/chr_rom.coe} [get_ips chr_rom]
+INFO: [IP_Flow 19-3484] Absolute path of file '/home/drew/ece385/nes/code/gen_nes/chr_rom.coe' provided. It will be converted relative to IP Instance files '../../../../code/gen_nes/chr_rom.coe'
+generate_target all [get_files  /home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'chr_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'chr_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'chr_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'chr_rom'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'chr_rom'...
+catch { config_ip_cache -export [get_ips -all chr_rom] }
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: chr_rom
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry 5c5a6745933328da to dir: /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/5/c/5c5a6745933328da/chr_rom.dcp to /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom.dcp.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom.dcp
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/5/c/5c5a6745933328da/chr_rom_stub.v to /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_stub.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_stub.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/5/c/5c5a6745933328da/chr_rom_stub.vhdl to /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_stub.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_stub.vhdl
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/5/c/5c5a6745933328da/chr_rom_sim_netlist.v to /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_sim_netlist.v.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_sim_netlist.v
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/drew/ece385/nes/nes.cache/ip/2022.2/5/c/5c5a6745933328da/chr_rom_sim_netlist.vhdl to /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6926] IPCACHE: added file to list for BOM: /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_sim_netlist.vhdl
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP chr_rom, cache-ID = 5c5a6745933328da; cache size = 14.418 MB.
+export_ip_user_files -of_objects [get_files /home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci]
+INFO: [Vivado 12-3453] The given sub-design is up-to-date, no action was taken.  If a run is still desired, use the '-force' option for the file:'/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci'
+export_simulation -of_objects [get_files /home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci] -directory /home/drew/ece385/nes/nes.ip_user_files/sim_scripts -ip_user_files_dir /home/drew/ece385/nes/nes.ip_user_files -ipstatic_source_dir /home/drew/ece385/nes/nes.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/drew/ece385/nes/nes.cache/compile_simlib/modelsim} {questa=/home/drew/ece385/nes/nes.cache/compile_simlib/questa} {xcelium=/home/drew/ece385/nes/nes.cache/compile_simlib/xcelium} {vcs=/home/drew/ece385/nes/nes.cache/compile_simlib/vcs} {riviera=/home/drew/ece385/nes/nes.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 123016 KB (Peak: 171468 KB), Simulation CPU Usage: 470170 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'cpu_nestest'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-13660] Precompiled IP simulation library mode is enabled (default). The design IP libraries will be referenced from the compiled library path. Please note that if the precompiled version of the library is not found from the path or the IP is in locked state, then the library source files for these IPs will be compiled locally as part of the compile order.
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'cpu_nestest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/frame_buffr.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/colors.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/pgr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/nestest.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/01.basics.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom_dk.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom_dk.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj cpu_nestest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/vram/sim/vram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/sim/chr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/sim/pgr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pgr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/cpu_ram/sim/cpu_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_1_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_1
+xvhdl --incr --relax -prj cpu_nestest_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    C_INCLUDE_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 15 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv:40]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 13 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv:31]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 11 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:571]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 11 for port 'addrb' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:578]
+WARNING: [VRFC 10-3823] variable 'A' might have multiple concurrent drivers [/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv:103]
+WARNING: [VRFC 10-5021] port 'clk_100Mhz' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv:76]
+WARNING: [VRFC 10-5021] port 'ef' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv:60]
+WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:570]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.t65_pack
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_1_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_1
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=30.87...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clock
+Compiling architecture rtl of entity xil_defaultlib.T65_MCode [t65_mcode_default]
+Compiling architecture rtl of entity xil_defaultlib.T65_ALU [t65_alu_default]
+Compiling architecture rtl of entity xil_defaultlib.T65 [t65_default]
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.cpu_ram
+Compiling module xil_defaultlib.cpu
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.pgr_rom
+Compiling module xil_defaultlib.pgr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.chr_rom
+Compiling module xil_defaultlib.chr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.vram
+Compiling module xil_defaultlib.ppu_v2
+Compiling module xil_defaultlib.nes
+Compiling module xil_defaultlib.cpu_nestest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_nestest_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 9222.949 ; gain = 0.000 ; free physical = 14168 ; free virtual = 23030
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cpu_nestest_behav -key {Behavioral:sim_1:Functional:cpu_nestest} -tclbatch {cpu_nestest.tcl} -view {/home/drew/ece385/nes/nes_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/drew/ece385/nes/nes_behav.wcfg
+source cpu_nestest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+Block Memory Generator module cpu_nestest.nes_inst.cpu_inst.iram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.pgr_rom_inst.pgr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.chr_rom_inst.chr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+WARNING: File descriptor (-1) passed to $fwrite in file /home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65.vhd at line 635 is not valid.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clock_buf.inst.mmcm_adv_inst 
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clk_inst.clk_wiz_inst.inst.mmcm_adv_inst 
+WARNING: 319583777ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+blk_mem_gen_v8_4_5 collision detected at time: 524084040890, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: 86, B  read address: 86
+blk_mem_gen_v8_4_5 collision detected at time: 526017158299, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: a8, B  read address: a8
+WARNING: 818992927ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:01:12 ; elapsed = 00:14:58 . Memory (MB): peak = 9222.949 ; gain = 0.000 ; free physical = 12684 ; free virtual = 22389
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:01:13 ; elapsed = 00:14:59 . Memory (MB): peak = 9222.949 ; gain = 0.000 ; free physical = 12676 ; free virtual = 22381
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:01:25 ; elapsed = 00:15:07 . Memory (MB): peak = 9222.949 ; gain = 0.000 ; free physical = 12676 ; free virtual = 22381
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 123016 KB (Peak: 171468 KB), Simulation CPU Usage: 892300 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'cpu_nestest'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-13660] Precompiled IP simulation library mode is enabled (default). The design IP libraries will be referenced from the compiled library path. Please note that if the precompiled version of the library is not found from the path or the IP is in locked state, then the library source files for these IPs will be compiled locally as part of the compile order.
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'cpu_nestest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/frame_buffr.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/colors.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/pgr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/nestest.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/01.basics.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom_dk.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom_dk.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj cpu_nestest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/vram/sim/vram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/sim/chr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/sim/pgr_rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pgr_rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/cpu_ram/sim/cpu_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_1_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/clock.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pgr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ppu_v2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_nestest
+xvhdl --incr --relax -prj cpu_nestest_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    C_INCLUDE_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 15 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv:40]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 13 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv:31]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 11 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:575]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 11 for port 'addrb' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:582]
+WARNING: [VRFC 10-3823] variable 'A' might have multiple concurrent drivers [/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv:103]
+WARNING: [VRFC 10-5021] port 'clk_100Mhz' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv:76]
+WARNING: [VRFC 10-5021] port 'ef' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv:60]
+WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:574]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.t65_pack
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_1_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_1
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=30.87...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clock
+Compiling architecture rtl of entity xil_defaultlib.T65_MCode [t65_mcode_default]
+Compiling architecture rtl of entity xil_defaultlib.T65_ALU [t65_alu_default]
+Compiling architecture rtl of entity xil_defaultlib.T65 [t65_default]
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.cpu_ram
+Compiling module xil_defaultlib.cpu
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.pgr_rom
+Compiling module xil_defaultlib.pgr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.chr_rom
+Compiling module xil_defaultlib.chr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.vram
+Compiling module xil_defaultlib.ppu_v2
+Compiling module xil_defaultlib.nes
+Compiling module xil_defaultlib.cpu_nestest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_nestest_behav
+execute_script: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 9222.949 ; gain = 0.000 ; free physical = 12869 ; free virtual = 22198
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cpu_nestest_behav -key {Behavioral:sim_1:Functional:cpu_nestest} -tclbatch {cpu_nestest.tcl} -view {/home/drew/ece385/nes/nes_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/drew/ece385/nes/nes_behav.wcfg
+source cpu_nestest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+Block Memory Generator module cpu_nestest.nes_inst.cpu_inst.iram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.pgr_rom_inst.pgr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.chr_rom_inst.chr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+WARNING: File descriptor (-1) passed to $fwrite in file /home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65.vhd at line 635 is not valid.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clock_buf.inst.mmcm_adv_inst 
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clk_inst.clk_wiz_inst.inst.mmcm_adv_inst 
+WARNING: 319583777ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+blk_mem_gen_v8_4_5 collision detected at time: 524084040890, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: 86, B  read address: 86
+blk_mem_gen_v8_4_5 collision detected at time: 526017158299, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: a8, B  read address: a8
+WARNING: 652605154ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+WARNING: 818992927ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+WARNING: 985380700ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+WARNING: 1151768474ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:01:33 ; elapsed = 00:12:42 . Memory (MB): peak = 9222.949 ; gain = 0.000 ; free physical = 12277 ; free virtual = 21977
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:01:34 ; elapsed = 00:12:44 . Memory (MB): peak = 9222.949 ; gain = 0.000 ; free physical = 12277 ; free virtual = 21977
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:01:46 ; elapsed = 00:12:52 . Memory (MB): peak = 9222.949 ; gain = 0.000 ; free physical = 12277 ; free virtual = 21977
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 09:20:06 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 09:20:06 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 09:24:19 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 09:24:19 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 09:30:13 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 09:30:13 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 09:32:26 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 09:32:26 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 09:36:09 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 09:36:09 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 09:44:08 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 09:44:08 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 09:44:59 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 09:44:59 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci' is already up-to-date
+[Fri May  2 09:53:30 2025] Launched synth_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/synth_1/runme.log
+[Fri May  2 09:53:30 2025] Launched impl_1...
+Run output will be captured here: /home/drew/ece385/nes/nes.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7s50_0]
+set_property PROGRAM.FILE {/home/drew/ece385/nes/nes.runs/impl_1/nes.bit} [get_hw_devices xc7s50_0]
+program_hw_devices [get_hw_devices xc7s50_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7s50_0] 0]
+INFO: [Labtools 27-1434] Device xc7s50 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+update_compile_order -fileset sources_1
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp with file /home/drew/ece385/nes/nes.runs/synth_1/nes.dcp
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 123016 KB (Peak: 171468 KB), Simulation CPU Usage: 757670 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'cpu_nestest'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-13660] Precompiled IP simulation library mode is enabled (default). The design IP libraries will be referenced from the compiled library path. Please note that if the precompiled version of the library is not found from the path or the IP is in locked state, then the library source files for these IPs will be compiled locally as part of the compile order.
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'cpu_nestest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/frame_buffr.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/colors.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/pgr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/nestest.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/01.basics.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom_dk.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom_dk.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj cpu_nestest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/clock.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pgr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ppu_v2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_nestest
+xvhdl --incr --relax -prj cpu_nestest_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    C_INCLUDE_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 15 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv:40]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 13 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv:31]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 11 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:575]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 11 for port 'addrb' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:582]
+WARNING: [VRFC 10-3823] variable 'A' might have multiple concurrent drivers [/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv:111]
+WARNING: [VRFC 10-5021] port 'clk_100Mhz' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv:76]
+WARNING: [VRFC 10-5021] port 'ef' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv:60]
+WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:574]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.t65_pack
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_1_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_1
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=30.87...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clock
+Compiling architecture rtl of entity xil_defaultlib.T65_MCode [t65_mcode_default]
+Compiling architecture rtl of entity xil_defaultlib.T65_ALU [t65_alu_default]
+Compiling architecture rtl of entity xil_defaultlib.T65 [t65_default]
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.cpu_ram
+Compiling module xil_defaultlib.cpu
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.pgr_rom
+Compiling module xil_defaultlib.pgr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.chr_rom
+Compiling module xil_defaultlib.chr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.vram
+Compiling module xil_defaultlib.ppu_v2
+Compiling module xil_defaultlib.nes
+Compiling module xil_defaultlib.cpu_nestest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_nestest_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 9468.898 ; gain = 0.000 ; free physical = 10576 ; free virtual = 20697
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cpu_nestest_behav -key {Behavioral:sim_1:Functional:cpu_nestest} -tclbatch {cpu_nestest.tcl} -view {/home/drew/ece385/nes/nes_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/drew/ece385/nes/nes_behav.wcfg
+source cpu_nestest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+Block Memory Generator module cpu_nestest.nes_inst.cpu_inst.iram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.pgr_rom_inst.pgr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.chr_rom_inst.chr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clock_buf.inst.mmcm_adv_inst 
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clk_inst.clk_wiz_inst.inst.mmcm_adv_inst 
+x
+
+x
+
+WARNING: 319583777ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+x
+
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:40 ; elapsed = 00:04:16 . Memory (MB): peak = 9468.898 ; gain = 0.000 ; free physical = 10323 ; free virtual = 20606
+INFO: [Common 17-344] 'run' was cancelled
+INFO: [Common 17-344] 'source' was cancelled
+xsim: Time (s): cpu = 00:00:41 ; elapsed = 00:04:17 . Memory (MB): peak = 9468.898 ; gain = 0.000 ; free physical = 10323 ; free virtual = 20606
+INFO: [Common 17-344] 'xsim' was cancelled
+INFO: [Vivado 12-5357] 'simulate' step aborted
+launch_simulation: Time (s): cpu = 00:00:53 ; elapsed = 00:04:25 . Memory (MB): peak = 9468.898 ; gain = 0.000 ; free physical = 10323 ; free virtual = 20606
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 123016 KB (Peak: 171468 KB), Simulation CPU Usage: 254020 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'cpu_nestest'
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-13660] Precompiled IP simulation library mode is enabled (default). The design IP libraries will be referenced from the compiled library path. Please note that if the precompiled version of the library is not found from the path or the IP is in locked state, then the library source files for these IPs will be compiled locally as part of the compile order.
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/Vivado/2022.2/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vivado/2022.2/data/xsim/xsim.ini' copied to run dir:'/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'cpu_nestest' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/frame_buffr.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/colors.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/pgr_rom.mif'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/nestest.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/microcode.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/01.basics.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/prg_rom_dk.coe'
+INFO: [SIM-utils-43] Exported '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim/chr_rom_dk.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj cpu_nestest_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module chr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/clock.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nes
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pgr_rom_mod
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ppu_v2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_nestest
+xvhdl --incr --relax -prj cpu_nestest_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2022.2
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot cpu_nestest_behav xil_defaultlib.cpu_nestest xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    C_INCLUDE_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 15 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv:40]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 13 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv:31]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 11 for port 'addra' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:575]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 11 for port 'addrb' [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:582]
+WARNING: [VRFC 10-3823] variable 'A' might have multiple concurrent drivers [/home/drew/ece385/nes/nes.srcs/sources_1/imports/new/clk_tb.sv:112]
+WARNING: [VRFC 10-5021] port 'clk_100Mhz' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv:76]
+WARNING: [VRFC 10-5021] port 'ef' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv:60]
+WARNING: [VRFC 10-5021] port 'dinb' is not connected on this instance [/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:574]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.t65_pack
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_1_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_1
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=30.87...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clock
+Compiling architecture rtl of entity xil_defaultlib.T65_MCode [t65_mcode_default]
+Compiling architecture rtl of entity xil_defaultlib.T65_ALU [t65_alu_default]
+Compiling architecture rtl of entity xil_defaultlib.T65 [t65_default]
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.cpu_ram
+Compiling module xil_defaultlib.cpu
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.pgr_rom
+Compiling module xil_defaultlib.pgr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.chr_rom
+Compiling module xil_defaultlib.chr_rom_mod
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_axi_regs_fwd_v8_4(C_DATA...
+Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
+Compiling module xil_defaultlib.vram
+Compiling module xil_defaultlib.ppu_v2
+Compiling module xil_defaultlib.nes
+Compiling module xil_defaultlib.cpu_nestest
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot cpu_nestest_behav
+execute_script: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 9468.898 ; gain = 0.000 ; free physical = 10327 ; free virtual = 20517
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/drew/ece385/nes/nes.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "cpu_nestest_behav -key {Behavioral:sim_1:Functional:cpu_nestest} -tclbatch {cpu_nestest.tcl} -view {/home/drew/ece385/nes/nes_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+open_wave_config /home/drew/ece385/nes/nes_behav.wcfg
+source cpu_nestest.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run all
+Block Memory Generator module cpu_nestest.nes_inst.cpu_inst.iram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.pgr_rom_inst.pgr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module cpu_nestest.nes_inst.chr_rom_inst.chr_rom_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clock_buf.inst.mmcm_adv_inst 
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance cpu_nestest.nes_inst.clk_inst.clk_wiz_inst.inst.mmcm_adv_inst 
+0
+
+0
+
+WARNING: 319583777ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+2
+
+2
+
+blk_mem_gen_v8_4_5 collision detected at time: 524084040890, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: 86, B  read address: 86
+blk_mem_gen_v8_4_5 collision detected at time: 526017158299, Instance: cpu_nestest.nes_inst.ppu_inst.vram_inst.inst.\native_mem_module.blk_mem_gen_v8_4_5_inst , A write address: a8, B  read address: a8
+WARNING: 652605154ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+0
+
+WARNING: 818992927ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+0
+
+WARNING: 985380700ns : none of the conditions were true for unique case from File:/home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv:220
+0
+

@@ -69,6 +69,9 @@ assign sync = nes_inst.sync;
 assign nesX = nes_inst.ppu_inst.nesX;
 assign nesY = nes_inst.ppu_inst.nesY;
 
+logic [14:0] v;
+
+assign v = nes_inst.ppu_inst.v; 
 
 logic [7:0] doutb = nes_inst.ppu_inst.doutb;
 assign ppu_clk = nes_inst.ppu_clk;
@@ -94,10 +97,16 @@ always_ff @(posedge sync) begin
     PC <= nes_inst.cpu_inst.PC | 8'h00;
 end
 
-
+/*
 always_ff @(negedge sync) begin
             $fwrite(log_file, "%04h A:%02h X:%02h Y:%02h P:%02h SP:%02h PPU:%3d,%3d CYC:%-5d\n", 
                  PC, A, X, Y , P & 8'hEF, SP, nesY, nesX, count_cpu);
+end */
+
+always_ff @(negedge ppu_clk) begin
+    if(nesX == 1 && nesY == 0) begin
+            $display("%x\n", v[14:12]);
+    end
 end
 
 initial begin

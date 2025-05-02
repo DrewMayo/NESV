@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Fri May  2 01:08:43 2025
--- Host        : DESKTOP-36ONVEV running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
+-- Date        : Fri May  2 14:37:42 2025
+-- Host        : mayoarch running 64-bit Arch Linux
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_bram_if_cntlr_0_1/mb_block_ilmb_bram_if_cntlr_0_stub.vhdl
+--               /home/drew/ece385/nes/6_2.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_bram_if_cntlr_0_1/mb_block_ilmb_bram_if_cntlr_0_stub.vhdl
 -- Design      : mb_block_ilmb_bram_if_cntlr_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s50csga324-1
