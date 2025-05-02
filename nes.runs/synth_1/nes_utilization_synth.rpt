@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Thu May  1 13:37:24 2025
-| Host         : mayoarch running 64-bit Arch Linux
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Fri May  2 01:41:13 2025
+| Host         : DESKTOP-36ONVEV running 64-bit major release  (build 9200)
 | Command      : report_utilization -file nes_utilization_synth.rpt -pb nes_utilization_synth.pb
 | Design       : nes
 | Device       : xc7s50csga324-1
@@ -31,16 +31,16 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  964 |     0 |          0 |     32600 |  2.96 |
-|   LUT as Logic             |  962 |     0 |          0 |     32600 |  2.95 |
+| Slice LUTs*                |  954 |     0 |          0 |     32600 |  2.93 |
+|   LUT as Logic             |  952 |     0 |          0 |     32600 |  2.92 |
 |   LUT as Memory            |    2 |     0 |          0 |      9600 |  0.02 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
 |     LUT as Shift Register  |    2 |     0 |            |           |       |
-| Slice Registers            |  318 |     0 |          0 |     65200 |  0.49 |
-|   Register as Flip Flop    |  318 |     0 |          0 |     65200 |  0.49 |
-|   Register as Latch        |    0 |     0 |          0 |     65200 |  0.00 |
+| Slice Registers            |  335 |     0 |          0 |     65200 |  0.51 |
+|   Register as Flip Flop    |  334 |     0 |          0 |     65200 |  0.51 |
+|   Register as Latch        |    1 |     0 |          0 |     65200 | <0.01 |
 | F7 Muxes                   |   10 |     0 |          0 |     16300 |  0.06 |
-| F8 Muxes                   |    0 |     0 |          0 |      8150 |  0.00 |
+| F8 Muxes                   |    1 |     0 |          0 |      8150 |  0.01 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
@@ -58,8 +58,8 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 6     |          Yes |           - |          Set |
-| 133   |          Yes |           - |        Reset |
+| 22    |          Yes |           - |          Set |
+| 134   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 179   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -94,7 +94,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    1 |     0 |          0 |       210 |  0.48 |
+| Bonded IOB                  |    8 |     0 |          0 |       210 |  3.81 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |         5 |  0.00 |
@@ -149,38 +149,58 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  522 |                 LUT |
-| LUT5     |  201 |                 LUT |
+| LUT6     |  509 |                 LUT |
+| LUT5     |  204 |                 LUT |
 | FDRE     |  179 |        Flop & Latch |
-| LUT3     |  140 |                 LUT |
 | FDCE     |  133 |        Flop & Latch |
-| LUT2     |  119 |                 LUT |
-| LUT4     |  109 |                 LUT |
+| LUT3     |  129 |                 LUT |
+| LUT4     |  125 |                 LUT |
+| LUT2     |  120 |                 LUT |
 | CARRY4   |   41 |          CarryLogic |
-| LUT1     |   34 |                 LUT |
+| LUT1     |   31 |                 LUT |
+| FDPE     |   22 |        Flop & Latch |
 | MUXF7    |   10 |               MuxFx |
-| FDPE     |    6 |        Flop & Latch |
+| OBUFT    |    5 |                  IO |
+| IBUF     |    3 |                  IO |
 | SRL16E   |    2 |  Distributed Memory |
-| IBUF     |    1 |                  IO |
+| MUXF8    |    1 |               MuxFx |
+| LDCE     |    1 |        Flop & Latch |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+-------------+------+
-|   Ref Name  | Used |
-+-------------+------+
-| vram        |    1 |
-| vga_clk_wiz |    1 |
-| pgr_rom     |    1 |
-| hdmi_tx_0   |    1 |
-| frame_buffr |    1 |
-| cpu_ram     |    1 |
-| clk_wiz_1   |    1 |
-| clk_wiz_0   |    1 |
-| chr_rom     |    1 |
-+-------------+------+
++----------------------------------+------+
+|             Ref Name             | Used |
++----------------------------------+------+
+| vram                             |    1 |
+| vga_clk_wiz                      |    1 |
+| pgr_rom                          |    1 |
+| mb_block_xbar_0                  |    1 |
+| mb_block_rst_clk_wiz_1_100M_0    |    1 |
+| mb_block_microblaze_0_axi_intc_0 |    1 |
+| mb_block_microblaze_0_0          |    1 |
+| mb_block_mdm_1_0                 |    1 |
+| mb_block_lmb_bram_0              |    1 |
+| mb_block_ilmb_v10_0              |    1 |
+| mb_block_ilmb_bram_if_cntlr_0    |    1 |
+| mb_block_dlmb_v10_0              |    1 |
+| mb_block_dlmb_bram_if_cntlr_0    |    1 |
+| mb_block_clk_wiz_1_0             |    1 |
+| mb_block_axi_uartlite_0_0        |    1 |
+| mb_block_axi_timer_0_0           |    1 |
+| mb_block_axi_quad_spi_0_0        |    1 |
+| mb_block_axi_gpio_0_3            |    1 |
+| mb_block_axi_gpio_0_2            |    1 |
+| mb_block_axi_gpio_0_1            |    1 |
+| hdmi_tx_0                        |    1 |
+| frame_buffr                      |    1 |
+| cpu_ram                          |    1 |
+| clk_wiz_1                        |    1 |
+| clk_wiz_0                        |    1 |
+| chr_rom                          |    1 |
++----------------------------------+------+
 
 
 9. Instantiated Netlists

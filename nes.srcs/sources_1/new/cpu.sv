@@ -28,6 +28,7 @@ module cpu(
     input logic               nmi_n,
     input logic  [7:0]  data_in_cart,
     input logic  [7:0]  data_in_ppu,
+    input logic  [7:0]  data_in_controller,
     //outputs
     output logic [7:0]     data_out,
     output logic [15:0]        addr,
@@ -103,6 +104,8 @@ always_comb begin
         data_in_mux = dout_iram;
     end else if (addr >= 16'h2000 && addr < 16'h4000 || addr == 16'h4014) begin
         data_in_mux = data_in_ppu;
+    end else if (addr == 16'h4016 || addr == 16'h4017) begin
+        data_in_mux = data_in_controller;
     end else if (addr >= 16'h4200) begin
         data_in_mux = data_in_cart;
     end   

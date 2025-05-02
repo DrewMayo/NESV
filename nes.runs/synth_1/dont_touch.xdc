@@ -3,11 +3,73 @@
 
 # XDC: new/nes.xdc
 
-# IP: ip/vga_clk_wiz/vga_clk_wiz.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==vga_clk_wiz || ORIG_REF_NAME==vga_clk_wiz} -quiet] -quiet
+# IP: ip/pgr_rom/pgr_rom.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pgr_rom || ORIG_REF_NAME==pgr_rom} -quiet] -quiet
+
+# Block Designs: bd/mb_block/mb_block.bd
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block || ORIG_REF_NAME==mb_block} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_microblaze_0_0_1/mb_block_microblaze_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_microblaze_0_0 || ORIG_REF_NAME==mb_block_microblaze_0_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_dlmb_v10_0_1/mb_block_dlmb_v10_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_dlmb_v10_0 || ORIG_REF_NAME==mb_block_dlmb_v10_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_ilmb_v10_0_1/mb_block_ilmb_v10_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_ilmb_v10_0 || ORIG_REF_NAME==mb_block_ilmb_v10_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_dlmb_bram_if_cntlr_0_1/mb_block_dlmb_bram_if_cntlr_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_dlmb_bram_if_cntlr_0 || ORIG_REF_NAME==mb_block_dlmb_bram_if_cntlr_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_ilmb_bram_if_cntlr_0_1/mb_block_ilmb_bram_if_cntlr_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_ilmb_bram_if_cntlr_0 || ORIG_REF_NAME==mb_block_ilmb_bram_if_cntlr_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_lmb_bram_0_1/mb_block_lmb_bram_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_lmb_bram_0 || ORIG_REF_NAME==mb_block_lmb_bram_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_xbar_0_1/mb_block_xbar_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_xbar_0 || ORIG_REF_NAME==mb_block_xbar_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_microblaze_0_axi_periph_0_1/mb_block_microblaze_0_axi_periph_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_microblaze_0_axi_periph_0 || ORIG_REF_NAME==mb_block_microblaze_0_axi_periph_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0_1/mb_block_microblaze_0_axi_intc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_microblaze_0_axi_intc_0 || ORIG_REF_NAME==mb_block_microblaze_0_axi_intc_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_mdm_1_0_1/mb_block_mdm_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_mdm_1_0 || ORIG_REF_NAME==mb_block_mdm_1_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_clk_wiz_1_0_1/mb_block_clk_wiz_1_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_clk_wiz_1_0 || ORIG_REF_NAME==mb_block_clk_wiz_1_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0_1/mb_block_rst_clk_wiz_1_100M_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_rst_clk_wiz_1_100M_0 || ORIG_REF_NAME==mb_block_rst_clk_wiz_1_100M_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_axi_uartlite_0_0_1/mb_block_axi_uartlite_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_axi_uartlite_0_0 || ORIG_REF_NAME==mb_block_axi_uartlite_0_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_axi_gpio_0_1 || ORIG_REF_NAME==mb_block_axi_gpio_0_1} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_axi_gpio_0_2 || ORIG_REF_NAME==mb_block_axi_gpio_0_2} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_axi_gpio_0_3 || ORIG_REF_NAME==mb_block_axi_gpio_0_3} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_axi_timer_0_0 || ORIG_REF_NAME==mb_block_axi_timer_0_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_axi_quad_spi_0_0 || ORIG_REF_NAME==mb_block_axi_quad_spi_0_0} -quiet] -quiet
+
+# IP: bd/mb_block/ip/mb_block_xlconcat_0_1/mb_block_xlconcat_0_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mb_block_xlconcat_0_1 || ORIG_REF_NAME==mb_block_xlconcat_0_1} -quiet] -quiet
 
 # IP: ip/chr_rom_1/chr_rom.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==chr_rom || ORIG_REF_NAME==chr_rom} -quiet] -quiet
 
-# IP: ip/pgr_rom/pgr_rom.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==pgr_rom || ORIG_REF_NAME==pgr_rom} -quiet] -quiet
+# IP: ip/vga_clk_wiz/vga_clk_wiz.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==vga_clk_wiz || ORIG_REF_NAME==vga_clk_wiz} -quiet] -quiet
+
+# XDC: c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/mb_block_ooc.xdc

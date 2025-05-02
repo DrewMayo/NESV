@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "/home/drew/ece385/nes/nes.runs/impl_1/nes.tcl"
+  variable script "C:/Users/Mark/Documents/NESV/NESV/nes.runs/impl_1/nes.tcl"
   variable category "vivado_impl"
 }
 
@@ -123,14 +123,15 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param chipscope.maxJobs 4
+  set_param chipscope.maxJobs 5
   open_checkpoint nes_routed.dcp
-  set_property webtalk.parent_dir /home/drew/ece385/nes/nes.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/Mark/Documents/NESV/NESV/nes.cache/wt [current_project]
 set_property TOP nes [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force -no_partial_mmi nes.mmi }
+  catch { write_bmm -force nes_bd.bmm }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
   write_bitstream -force nes.bit 

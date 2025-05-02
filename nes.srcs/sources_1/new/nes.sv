@@ -25,14 +25,22 @@ module nes(
     input logic         reset_rtl_0,
     
     //UART
-    // input logic         uart_rtl_0_rxd,
-    // output logic        uart_rtl_0_txd,
+    input logic         uart_rtl_0_rxd,
+    output logic        uart_rtl_0_txd,
     
     //HDMI
     output logic        hdmi_tmds_clk_n,
     output logic        hdmi_tmds_clk_p,
     output logic [2:0]  hdmi_tmds_data_n,
-    output logic [2:0]  hdmi_tmds_data_p
+    output logic [2:0]  hdmi_tmds_data_p,
+    
+     //USB signals
+    input logic [0:0] gpio_usb_int_tri_i,
+    output logic gpio_usb_rst_tri_o,
+    input logic usb_spi_miso,
+    output logic usb_spi_mosi,
+    output logic usb_spi_sclk,
+    output logic usb_spi_ss
 );
 //clock
 logic rst_n;
@@ -44,6 +52,7 @@ logic locked;
 //cpu
 logic [7:0] data_in_pgr_rom;
 logic [7:0] data_in_ppu;
+logic [7:0] data_in_controller;
 logic [7:0] data_out;
 logic [15:0] addr;
 logic [15:0] ppu_addr;
@@ -80,6 +89,7 @@ cpu cpu_inst(
     .rst_n(rst_n),
     .data_in_cart(data_in_pgr_rom), //in from the cpu side
     .data_in_ppu(data_in_ppu),      //data from the ppu
+    .data_in_controller(data_in_controller), //data from the controller
     .nmi_n(nmi_n),                  
     
     //outputs
@@ -125,5 +135,22 @@ ppu_v2 ppu_inst(
     .hdmi_tx_p(hdmi_tmds_data_p),
     .nmi_n(nmi_n)
 );
+
+controller controller(
+    //inputs
+    .Clk(Clk_buf),
+    .reset_rtl_0(reset_rtl_0),
+    .gpio_usb_int_tri_i(gpio_usb_int_tri_i),
+    .usb_spi_miso(usb_spi_miso),
+    .cpu_data_in(data_out),
+    .cpu_addr(addr),
+    .R_W_n(write_n),
+    
+    //outputs
+    .controller_out(data_in_controller)
+   
+);
+
+
 
 endmodule

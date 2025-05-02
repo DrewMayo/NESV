@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/drew/ece385/nes/nes.runs/synth_1/nes.tcl"
+  variable script "C:/Users/Mark/Documents/NESV/NESV/nes.runs/synth_1/nes.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,12 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 4
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param synth.incrementalSynthesisCache ./.Xil/Vivado-44733-mayoarch/incrSyn
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_param chipscope.maxJobs 5
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -83,77 +78,119 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/drew/ece385/nes/nes.cache/wt [current_project]
-set_property parent.project_path /home/drew/ece385/nes/nes.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+set_property webtalk.parent_dir C:/Users/Mark/Documents/NESV/NESV/nes.cache/wt [current_project]
+set_property parent.project_path C:/Users/Mark/Documents/NESV/NESV/nes.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_repo_paths /home/drew/uiuc/ece385/ip_repo [current_project]
+set_property ip_repo_paths c:/Users/Mark/Documents/uiuc/ece385/ip_repo [current_project]
 update_ip_catalog
-set_property ip_output_repo /home/drew/ece385/nes/nes.cache/ip [current_project]
+set_property ip_output_repo c:/Users/Mark/Documents/NESV/NESV/nes.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files /home/drew/ece385/nes/code/gen_nes/nestest.coe
-add_files /home/drew/ece385/nes/nes.srcs/sources_1/imports/Downloads/microcode.coe
-add_files /home/drew/Downloads/microcode.coe
-add_files /home/drew/ece385/nes/code/gen_nes/01.basics.coe
-add_files /home/drew/ece385/nes/code/gen_nes/colors.coe
-add_files /home/drew/ece385/nes/code/gen_nes/chr_rom.coe
-add_files /home/drew/ece385/nes/code/gen_nes/prg_rom.coe
-add_files /home/drew/ece385/nes/code/gen_nes/prg_rom_dk.coe
-add_files /home/drew/ece385/nes/code/gen_nes/chr_rom_dk.coe
+add_files C:/Users/Mark/Documents/NESV/NESV/code/gen_nes/nestest.coe
+add_files C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/imports/Downloads/microcode.coe
+add_files C:/Users/Mark/Documents/NESV/NESV/code/gen_nes/01.basics.coe
+add_files C:/Users/Mark/Documents/NESV/NESV/code/gen_nes/colors.coe
+add_files C:/Users/Mark/Documents/NESV/NESV/code/gen_nes/chr_rom.coe
+add_files C:/Users/Mark/Documents/NESV/NESV/code/gen_nes/prg_rom.coe
+add_files C:/Users/Mark/Documents/NESV/NESV/code/gen_nes/prg_rom_dk.coe
+add_files C:/Users/Mark/Documents/NESV/NESV/code/gen_nes/chr_rom_dk.coe
 read_verilog -library xil_defaultlib -sv {
-  /home/drew/ece385/nes/nes.srcs/sources_1/imports/src/VGA_controller.sv
-  /home/drew/ece385/nes/nes.srcs/sources_1/new/chr_rom_mod.sv
-  /home/drew/ece385/nes/nes.srcs/sources_1/new/clock.sv
-  /home/drew/ece385/nes/nes.srcs/sources_1/new/cpu.sv
-  /home/drew/ece385/nes/nes.srcs/sources_1/new/palletes.sv
-  /home/drew/ece385/nes/nes.srcs/sources_1/new/pgr_rom.sv
-  /home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_to_hdmi.sv
-  /home/drew/ece385/nes/nes.srcs/sources_1/new/ppu_v2.sv
-  /home/drew/ece385/nes/nes.srcs/sources_1/new/nes.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/imports/src/VGA_controller.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/chr_rom_mod.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/clock.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/controller.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/cpu.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/palletes.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/pgr_rom.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/ppu_to_hdmi.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/ppu_v2.sv
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/new/nes.sv
 }
 read_vhdl -library xil_defaultlib {
-  /home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65_Pack.vhd
-  /home/drew/ece385/nes/nes.srcs/sources_1/imports/mister_core/T65_Pack.vhd
-  /home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65_MCode.vhd
-  /home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65_ALU.vhd
-  /home/drew/ece385/nes/nes.srcs/sources_1/imports/T_65_src/T65.vhd
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/imports/T_65_src/T65_Pack.vhd
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/imports/mister_core/T65_Pack.vhd
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/imports/T_65_src/T65_MCode.vhd
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/imports/T_65_src/T65_ALU.vhd
+  C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/imports/T_65_src/T65.vhd
 }
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/vga_clk_wiz/vga_clk_wiz_board.xdc]
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xdc]
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/vga_clk_wiz/vga_clk_wiz_late.xdc]
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/vga_clk_wiz/vga_clk_wiz_ooc.xdc]
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/pgr_rom/pgr_rom_ooc.xdc]
 
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/chr_rom_1/chr_rom_ooc.xdc]
+add_files C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/bd/mb_block/mb_block.bd
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0_1/mb_block_microblaze_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0_1/mb_block_microblaze_0_0_ooc_debug.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0_1/mb_block_microblaze_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_v10_0_1/mb_block_dlmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_v10_0_1/mb_block_ilmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_bram_if_cntlr_0_1/mb_block_dlmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_bram_if_cntlr_0_1/mb_block_ilmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_lmb_bram_0_1/mb_block_lmb_bram_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_xbar_0_1/mb_block_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0_1/mb_block_microblaze_0_axi_intc_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0_1/mb_block_microblaze_0_axi_intc_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_axi_intc_0_1/mb_block_microblaze_0_axi_intc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0_1/mb_block_mdm_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0_1/mb_block_mdm_1_0_ooc_trace.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0_1/mb_block_clk_wiz_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0_1/mb_block_clk_wiz_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0_1/mb_block_clk_wiz_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0_1/mb_block_rst_clk_wiz_1_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0_1/mb_block_rst_clk_wiz_1_100M_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_rst_clk_wiz_1_100M_0_1/mb_block_rst_clk_wiz_1_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0_1/mb_block_axi_uartlite_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0_1/mb_block_axi_uartlite_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_uartlite_0_0_1/mb_block_axi_uartlite_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/mb_block_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_microblaze_0_0_1/data/mb_bootloop_le.elf]
 
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/pgr_rom/pgr_rom.xci
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/pgr_rom/pgr_rom_ooc.xdc]
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/chr_rom_1/chr_rom.xci
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/chr_rom_1/chr_rom_ooc.xdc]
 
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/hdmi_tx_0_1/hdmi_tx_0.xci
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xci
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/vga_clk_wiz/vga_clk_wiz_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/vga_clk_wiz/vga_clk_wiz.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/vga_clk_wiz/vga_clk_wiz_late.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/vga_clk_wiz/vga_clk_wiz_ooc.xdc]
 
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/frame_buffr_1/frame_buffr.xci
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/frame_buffr_1/frame_buffr_ooc.xdc]
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/hdmi_tx_0_1/hdmi_tx_0.xci
 
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_late.xdc]
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/frame_buffr_1/frame_buffr.xci
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/frame_buffr_1/frame_buffr_ooc.xdc]
 
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_board.xdc]
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1.xdc]
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_ooc.xdc]
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_late.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/cpu_ram/cpu_ram.xci
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/cpu_ram/cpu_ram_ooc.xdc]
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/clk_wiz_1/clk_wiz_1_ooc.xdc]
 
-read_ip -quiet /home/drew/ece385/nes/nes.srcs/sources_1/ip/vram/vram.xci
-set_property used_in_implementation false [get_files -all /home/drew/ece385/nes/nes.gen/sources_1/ip/vram/vram_ooc.xdc]
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/cpu_ram/cpu_ram.xci
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/cpu_ram/cpu_ram_ooc.xdc]
+
+read_ip -quiet C:/Users/Mark/Documents/NESV/NESV/nes.srcs/sources_1/ip/vram/vram.xci
+set_property used_in_implementation false [get_files -all c:/Users/Mark/Documents/NESV/NESV/nes.gen/sources_1/ip/vram/vram_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -164,14 +201,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/drew/ece385/nes/nes.srcs/constrs_1/new/nes.xdc
-set_property used_in_implementation false [get_files /home/drew/ece385/nes/nes.srcs/constrs_1/new/nes.xdc]
+read_xdc C:/Users/Mark/Documents/NESV/NESV/nes.srcs/constrs_1/new/nes.xdc
+set_property used_in_implementation false [get_files C:/Users/Mark/Documents/NESV/NESV/nes.srcs/constrs_1/new/nes.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/drew/ece385/nes/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/Mark/Documents/NESV/NESV/nes.srcs/utils_1/imports/synth_1/cpu_2A03.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
