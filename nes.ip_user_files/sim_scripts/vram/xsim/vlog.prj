@@ -1,6 +1,0 @@
-verilog xil_defaultlib  \
-"../../../../nes.gen/sources_1/ip/vram/sim/vram.v" \
-
-verilog xil_defaultlib "glbl.v"
-
-nosort

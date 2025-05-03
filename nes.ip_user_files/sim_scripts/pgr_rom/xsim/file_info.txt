@@ -1,2 +1,0 @@
-pgr_rom.v,verilog,xil_defaultlib,../../../../nes.gen/sources_1/ip/pgr_rom/sim/pgr_rom.v,
-glbl.v,Verilog,xil_defaultlib,glbl.v

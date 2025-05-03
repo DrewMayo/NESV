@@ -152,7 +152,6 @@ controller controller(
     .uart_rtl_0_rxd(uart_rtl_0_rxd),
     .uart_rtl_0_txd(uart_rtl_0_txd),
 
-    .cpu_data_in(data_out),
     .cpu_addr(addr),
     .R_W_n(write_n),
     
