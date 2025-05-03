@@ -45,7 +45,7 @@ module controller(
     logic [31:0] keycode0_gpio, keycode1_gpio;
     
     mb_block mb_block_i (
-        .clk_25MHz(Clk),
+        .clk_100MHz(Clk),
         .gpio_usb_int_tri_i(gpio_usb_int_tri_i),
         .gpio_usb_keycode_0_tri_o(keycode0_gpio),
         .gpio_usb_keycode_1_tri_o(keycode1_gpio),

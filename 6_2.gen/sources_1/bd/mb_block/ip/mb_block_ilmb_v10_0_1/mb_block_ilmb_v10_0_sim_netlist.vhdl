@@ -1,11 +1,11 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
--- Date        : Fri May  2 14:37:38 2025
--- Host        : mayoarch running 64-bit Arch Linux
--- Command     : write_vhdl -force -mode funcsim -rename_top mb_block_ilmb_v10_0 -prefix
---               mb_block_ilmb_v10_0_ mb_block_dlmb_v10_0_sim_netlist.vhdl
--- Design      : mb_block_dlmb_v10_0
+-- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+-- Date        : Sat May  3 01:29:33 2025
+-- Host        : DESKTOP-36ONVEV running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/Mark/Documents/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_ilmb_v10_0_1/mb_block_ilmb_v10_0_sim_netlist.vhdl
+-- Design      : mb_block_ilmb_v10_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7s50csga324-1
@@ -52,6 +52,8 @@ entity mb_block_ilmb_v10_0_lmb_v10 is
   attribute C_LMB_NUM_SLAVES of mb_block_ilmb_v10_0_lmb_v10 : entity is 1;
   attribute C_LMB_PROTOCOL : integer;
   attribute C_LMB_PROTOCOL of mb_block_ilmb_v10_0_lmb_v10 : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of mb_block_ilmb_v10_0_lmb_v10 : entity is "lmb_v10";
 end mb_block_ilmb_v10_0_lmb_v10;
 
 architecture STRUCTURE of mb_block_ilmb_v10_0_lmb_v10 is
@@ -142,7 +144,7 @@ entity mb_block_ilmb_v10_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of mb_block_ilmb_v10_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of mb_block_ilmb_v10_0 : entity is "mb_block_dlmb_v10_0,lmb_v10,{}";
+  attribute CHECK_LICENSE_TYPE of mb_block_ilmb_v10_0 : entity is "mb_block_ilmb_v10_0,lmb_v10,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of mb_block_ilmb_v10_0 : entity is "yes";
   attribute x_core_info : string;
@@ -169,7 +171,7 @@ architecture STRUCTURE of mb_block_ilmb_v10_0 is
   attribute x_interface_info of LMB_ReadStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 READSTROBE";
   attribute x_interface_info of LMB_Ready : signal is "xilinx.com:interface:lmb:1.0 LMB_M READY";
   attribute x_interface_info of LMB_Rst : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 RST, xilinx.com:interface:lmb:1.0 LMB_M RST";
-  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD";
+  attribute x_interface_parameter of LMB_Rst : signal is "XIL_INTERFACENAME LMB_Sl_0, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_WRITE, PROTOCOL STANDARD, XIL_INTERFACENAME LMB_M, ADDR_WIDTH 32, DATA_WIDTH 32, READ_WRITE_MODE READ_ONLY, PROTOCOL STANDARD";
   attribute x_interface_info of LMB_UE : signal is "xilinx.com:interface:lmb:1.0 LMB_M UE";
   attribute x_interface_info of LMB_Wait : signal is "xilinx.com:interface:lmb:1.0 LMB_M WAIT";
   attribute x_interface_info of LMB_WriteStrobe : signal is "xilinx.com:interface:lmb:1.0 LMB_Sl_0 WRITESTROBE";

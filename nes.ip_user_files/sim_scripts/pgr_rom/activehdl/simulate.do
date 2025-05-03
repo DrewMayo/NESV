@@ -13,7 +13,7 @@ view structure
 
 do {pgr_rom.udo}
 
-run
+run 1000ns
 
 endsim
 
