@@ -1,8 +1,8 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-//Date        : Fri May  2 01:06:00 2025
-//Host        : DESKTOP-36ONVEV running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
+//Date        : Fri May  2 22:19:17 2025
+//Host        : mayoarch running 64-bit Arch Linux
 //Command     : generate_target mb_block.bd
 //Design      : mb_block
 //Purpose     : IP block netlist
@@ -948,7 +948,6 @@ module mb_block
     uart_rtl_0_rxd,
     uart_rtl_0_txd,
     usb_spi_miso,
-    usb_spi_miso1,
     usb_spi_mosi,
     usb_spi_sclk,
     usb_spi_ss);
@@ -965,7 +964,6 @@ module mb_block
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 uart_rtl_0 RxD" *) input uart_rtl_0_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 uart_rtl_0 TxD" *) output uart_rtl_0_txd;
   input usb_spi_miso;
-  input usb_spi_miso1;
   output usb_spi_mosi;
   output usb_spi_sclk;
   output [0:0]usb_spi_ss;

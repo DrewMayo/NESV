@@ -1,10 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-// Date        : Fri May  2 14:37:48 2025
+// Date        : Fri May  2 20:54:02 2025
 // Host        : mayoarch running 64-bit Arch Linux
 // Command     : write_verilog -force -mode funcsim
-//               /home/drew/ece385/nes/6_2.gen/sources_1/bd/mb_block/ip/mb_block_xbar_0_1/mb_block_xbar_0_sim_netlist.v
+//               /home/drew/ece385/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_xbar_0_1/mb_block_xbar_0_sim_netlist.v
 // Design      : mb_block_xbar_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

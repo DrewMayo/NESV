@@ -135,7 +135,7 @@ ppu_v2 ppu_inst(
     .hdmi_tx_p(hdmi_tmds_data_p),
     .nmi_n(nmi_n)
 );
-
+/*
 controller controller(
     //inputs
     .Clk(Clk_buf),
@@ -159,7 +159,7 @@ controller controller(
     //outputs
     .controller_out(data_in_controller)
    
-);
+);*/
 
 
 

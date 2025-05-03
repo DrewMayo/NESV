@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May  2 01:06:04 2025" VIVADOVERSION="2022.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri May  2 22:19:18 2025" VIVADOVERSION="2022.2">
 
   <SYSTEMINFO ARCH="spartan7" DEVICE="7s50" NAME="mb_block" PACKAGE="csga324" SPEEDGRADE="-1"/>
 
@@ -24,9 +24,29 @@
         <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio_io_o"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="I" LEFT="7" NAME="gpio_usb_keycode_0_tri_i" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio_io_i">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio_io_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="gpio_usb_keycode_0_tri_t" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio_io_t">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio_io_t"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="O" LEFT="7" NAME="gpio_usb_keycode_1_tri_o" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio2_io_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio2_io_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="gpio_usb_keycode_1_tri_i" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio2_io_i">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio2_io_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="gpio_usb_keycode_1_tri_t" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio2_io_t">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio2_io_t"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="O" LEFT="0" NAME="gpio_usb_rst_tri_o" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_rst_gpio_io_o">
@@ -59,30 +79,9 @@
         <CONNECTION INSTANCE="spi_usb" PORT="io1_i"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="usb_spi_miso1" SIGIS="undef"/>
     <PORT DIR="O" LEFT="0" NAME="usb_spi_ss" RIGHT="0" SIGIS="undef" SIGNAME="spi_usb_ss_o">
       <CONNECTIONS>
         <CONNECTION INSTANCE="spi_usb" PORT="ss_o"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="7" NAME="gpio_usb_keycode_0_tri_i" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio_io_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio_io_i"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="7" NAME="gpio_usb_keycode_0_tri_t" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio_io_t">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio_io_t"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="7" NAME="gpio_usb_keycode_1_tri_i" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio2_io_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio2_io_i"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="7" NAME="gpio_usb_keycode_1_tri_t" RIGHT="0" SIGIS="undef" SIGNAME="gpio_usb_keycode_gpio2_io_t">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="gpio_usb_keycode" PORT="gpio2_io_t"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -458,7 +457,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/clk_wiz_1_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mb_block_clk_100MHz"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -545,7 +544,7 @@
         <PARAMETER NAME="C_SECONDARY_IN_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_SECONDARY_IN_TIMEPERIOD" VALUE="10.000"/>
         <PARAMETER NAME="C_FEEDBACK_SOURCE" VALUE="FDBK_AUTO"/>
-        <PARAMETER NAME="C_PRIM_SOURCE" VALUE="Single_ended_clock_capable_pin"/>
+        <PARAMETER NAME="C_PRIM_SOURCE" VALUE="No_buffer"/>
         <PARAMETER NAME="C_PHASESHIFT_MODE" VALUE="WAVEFORM"/>
         <PARAMETER NAME="C_SECONDARY_SOURCE" VALUE="Single_ended_clock_capable_pin"/>
         <PARAMETER NAME="C_CLKFB_IN_SIGNALING" VALUE="SINGLE"/>
@@ -920,7 +919,7 @@
         <PARAMETER NAME="CLKOUT5_MATCHED_ROUTING" VALUE="false"/>
         <PARAMETER NAME="CLKOUT6_MATCHED_ROUTING" VALUE="false"/>
         <PARAMETER NAME="CLKOUT7_MATCHED_ROUTING" VALUE="false"/>
-        <PARAMETER NAME="PRIM_SOURCE" VALUE="Single_ended_clock_capable_pin"/>
+        <PARAMETER NAME="PRIM_SOURCE" VALUE="No_buffer"/>
         <PARAMETER NAME="CLKOUT1_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="CLKOUT2_DRIVES" VALUE="BUFG"/>
         <PARAMETER NAME="CLKOUT3_DRIVES" VALUE="BUFG"/>
@@ -1446,7 +1445,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/clk_wiz_1_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mb_block_clk_100MHz"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -1827,7 +1826,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/clk_wiz_1_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mb_block_clk_100MHz"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -2192,7 +2191,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/clk_wiz_1_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mb_block_clk_100MHz"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -2909,7 +2908,7 @@
           <PARAMETER NAME="HAS_BRESP" VALUE="1"/>
           <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/clk_wiz_1_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mb_block_clk_100MHz"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="WUSER_BITS_PER_BYTE" VALUE="0"/>
           <PARAMETER NAME="INSERT_VIP" VALUE="0"/>
@@ -4664,7 +4663,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="2"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/clk_wiz_1_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mb_block_clk_100MHz"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -8042,7 +8041,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/clk_wiz_1_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mb_block_clk_100MHz"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -8567,7 +8566,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.0"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="/clk_wiz_1_clk_out1"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="mb_block_clk_100MHz"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>

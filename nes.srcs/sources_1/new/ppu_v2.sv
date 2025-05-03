@@ -290,7 +290,7 @@ always_comb begin
   //                  increments
   // -------------------------------------------
 
-  if (nesX > 279 && nesX < 305 && nesY == 261) begin
+  if (nesX > 279 && nesX < 305 && nesY == 261 && (ppumask & 8'h18)) begin
     next_v[14:11] = next_t[14:11];
     next_v[9:5] = next_t[9:5];
   end
@@ -328,9 +328,9 @@ always_comb begin
   end
 end
 
-  // -----------------------------------------------
-  //                  render loop
-  // -----------------------------------------------
+  //   ---------------------------------------------------------------
+  //                            handle nmi
+  //   ---------------------------------------------------------------
   //
   //    Handles the interrupts for the non-maskible interrupt
   //    on the rising edge of vblank check for if it should generate
@@ -398,29 +398,28 @@ logic [15:0] next_v_render;
 
 assign render_cycle = nesX[2:0] - 1;
 
-(*keep = "true" *) logic [7:0] name_table_reg;
+logic [7:0] name_table_reg;
 logic [7:0] pt_lo_reg;
 logic [7:0] pt_hi_reg;
 logic [7:0] at_reg;
 logic [15:0] shift_reg_lo;
 logic [15:0] shift_reg_hi;
-(*keep = "true" *) logic [7:0] next_name_table_reg;
-
-(*keep = "true" *) logic [7:0] next_pt_lo_reg;
-(*keep = "true" *)  logic [7:0] next_pt_hi_reg;
+logic [15:0] shift_reg_bg_hi;
+logic [15:0] shift_reg_bg_lo;
+logic [7:0] next_name_table_reg;
+logic [7:0] next_pt_lo_reg;
+logic [7:0] next_pt_hi_reg;
 logic [7:0] next_at_reg;
 logic [15:0] next_shift_reg_lo;
 logic [15:0] next_shift_reg_hi;
+logic [15:0] next_shift_reg_bg_hi;
+logic [15:0] next_shift_reg_bg_lo;
+
 logic [7:0] vram_read;
 logic [7:0] vram_read_reg;
 logic [7:0] mem_read;
-
-logic pixel_lo, pixel_hi;
-logic [1:0] attr_bits;
-logic [3:0] color_index;
-
-assign attr_bits = at_reg >> (((v >> 4) & 2) | (v & 1));
-assign color_index = {2'b00, shift_reg_hi[15], shift_reg_lo[15]};
+logic [1:0] quadrent;
+logic [1:0] next_quadrent;
 
 always_comb begin
   next_name_table_reg = name_table_reg;
@@ -430,6 +429,9 @@ always_comb begin
   next_v_render = v_render;
   next_shift_reg_hi = shift_reg_hi;
   next_shift_reg_lo = shift_reg_lo;
+  next_shift_reg_bg_lo = shift_reg_bg_lo;
+  next_shift_reg_bg_hi = shift_reg_bg_hi;
+  next_quadrent = quadrent;
   if (~rst_n | ~locked_clk) begin
     next_name_table_reg = 0;
     next_pt_lo_reg = 0;
@@ -439,7 +441,7 @@ always_comb begin
     next_shift_reg_hi = 0;
     next_shift_reg_lo = 0;
   end
-  if ((nesY < 240 || nesY == 261) && (nesX < 256 || (nesX > 320 && nesX < 337)) && (ppumask & 8'h18)) begin
+  if ((nesY < 240 || nesY == 261) && ((nesX > 0 && nesX < 256) || (nesX > 320 && nesX < 337)) && (ppumask & 8'h18)) begin
     next_name_table_reg = name_table_reg;
     next_pt_lo_reg = pt_lo_reg;
     next_pt_hi_reg = pt_hi_reg;
@@ -447,6 +449,9 @@ always_comb begin
     next_v_render = v_render;
     next_shift_reg_lo = shift_reg_lo << 1;
     next_shift_reg_hi = shift_reg_hi << 1;
+    next_shift_reg_bg_hi = shift_reg_bg_hi << 1;
+    next_shift_reg_bg_lo = shift_reg_bg_lo << 1;
+    
     unique case (render_cycle)
       3'b000:
       begin 
@@ -461,10 +466,11 @@ always_comb begin
       3'b010:
       begin
         next_v_render = (16'h23C0 | (v & 16'h0C00) | ((v >> 4) & 16'h0038) | ((v >> 2) & 16'h0007));
+        next_quadrent = ({v_render[6], v_render[1]} * 2) * 2'b11;
       end
       3'b011:
       begin
-        next_at_reg = mem_read;
+        next_at_reg = mem_read >> quadrent;
         next_v_render = v_render;
       end
       3'b100:
@@ -485,6 +491,8 @@ always_comb begin
         next_pt_hi_reg = mem_read;
         next_shift_reg_hi = {shift_reg_hi[14:7], mem_read};
         next_shift_reg_lo = {shift_reg_lo[14:7], pt_lo_reg};
+        next_shift_reg_bg_hi = {shift_reg_bg_hi[14:7], {8{at_reg[1]}}};
+        next_shift_reg_bg_lo = {shift_reg_bg_lo[14:7], {8{at_reg[0]}}};
         next_v_render = v_render;
       end
       default: begin
@@ -503,6 +511,9 @@ always_ff @(posedge ppu_clk) begin
   at_reg <= next_at_reg;
   shift_reg_hi <= next_shift_reg_hi;
   shift_reg_lo <= next_shift_reg_lo;
+  shift_reg_bg_hi <= next_shift_reg_bg_hi;
+  shift_reg_bg_lo <= next_shift_reg_bg_lo;
+  quadrent <= next_quadrent;
 end
 
 
@@ -541,27 +552,76 @@ logic [15:0] v_mux;
 logic nes_ena_wr;
 
 
+
+logic pixel_lo, pixel_hi;
+logic [1:0] attr_bits;
+logic [3:0] color_index;
+logic [7:0] real_color;
+logic [7:0] pallete_ram[32];
+logic [7:0] next_pallete_ram[32];
+logic [4:0] pallete_idx;
+logic [4:0] pallete_addr;
+
 always_comb begin
     v_mux = (nesY < 240 && (ppumask & 8'h18)) ? v_render : v;
+    pallete_addr = 0;
     ppu_addr = v_mux;
     vram_wea = 1'b0;
+    vram_ena = 1'b0;
     addra = (v_mux - 16'h2000) & 16'h07FF;
     if (v_mux < 16'h2000) begin
       mem_read = data_in_ppu;
-      vram_ena = 1'b0;
     end else if (v_mux >= 16'h2000 && v_mux < 16'h3F00) begin
       vram_ena = 1'b1;
       mem_read = vram_read;
+      if (ppudata_write) begin
+            vram_wea = 1'b1;
+        end
+    end else if (v_mux >= 16'h3F00 && v_mux < 16'h4000) begin
+        pallete_addr = v_mux[4:0];
+        if (pallete_addr == 5'h10 || pallete_addr == 5'h14 ||
+            pallete_addr == 5'h18 || pallete_addr == 5'h1C) begin
+            pallete_addr = pallete_addr & 5'h0F;
+        end
+        mem_read = pallete_ram[pallete_addr];
     end else begin
-      vram_ena = 1'b0;
       mem_read = 8'h00;
     end
-    if (ppudata_write) begin
-      if (v_mux >= 16'h2000 && v_mux < 16'h3F00) begin
-        vram_wea = 1'b1;
-      end
+end
+
+
+logic [4:0] p_index;
+
+always_comb begin
+    p_index = 0;
+    for(int i = 0; i < 32; i++) begin
+        next_pallete_ram[i] = pallete_ram[i];
+    end
+    if (ppudata_write && v_mux >= 16'h3F00 && v_mux < 16'h4000) begin
+       p_index = v_mux[4:0];
+       if (p_index == 5'h10 || p_index == 5'h14 ||
+          p_index == 5'h18 || p_index == 5'h1C) begin
+            p_index = p_index & 5'h0F;
+       end
+       next_pallete_ram[pallete_addr] = ppudata;
+    end
+    
+    color_index = {shift_reg_bg_hi[15], shift_reg_bg_lo[15] , shift_reg_hi[15], shift_reg_lo[15]};
+    if (color_index[1:0] == 2'b00) begin
+        pallete_idx = 5'h00;
+    end else begin
+        pallete_idx = color_index;
+    end
+    real_color = pallete_ram[pallete_idx];
+end
+
+
+always_ff @(posedge ppu_clk) begin
+    for(int i = 0; i < 32; i++) begin
+        pallete_ram[i] <= next_pallete_ram[i];
     end
 end
+
 
 always_comb begin
   if (nesX < 256 && nesY < 240) begin
@@ -591,8 +651,8 @@ vram vram_inst(
 ppu_to_hdmi ppu_hdmi_inst(
     .nesX(nesX),
     .nesY(nesY),
-    //.nesData(doutb),
-    .nesData(color_index),
+    //.nesData(at_reg),
+    .nesData(real_color),
     .nes_ena_wr(nes_ena_wr),
     .nes_ena(1'b1),
     .rst_n(rst_n),

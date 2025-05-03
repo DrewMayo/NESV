@@ -21,3 +21,15 @@ platform generate
 platform active {nes}
 platform config -updatehw {C:/Users/Mark/Documents/NESV/NESV/nes.xsa}
 platform generate -domains 
+platform active {nes}
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains standalone_microblaze_0 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform clean
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate
+platform clean
+platform clean
+platform generate

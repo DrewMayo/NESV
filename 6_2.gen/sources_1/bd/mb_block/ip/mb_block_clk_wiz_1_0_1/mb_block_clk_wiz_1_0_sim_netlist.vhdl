@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
--- Date        : Fri May  2 14:37:39 2025
+-- Date        : Fri May  2 21:04:22 2025
 -- Host        : mayoarch running 64-bit Arch Linux
 -- Command     : write_vhdl -force -mode funcsim
---               /home/drew/ece385/nes/6_2.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0_1/mb_block_clk_wiz_1_0_sim_netlist.vhdl
+--               /home/drew/ece385/NESV/6_2.gen/sources_1/bd/mb_block/ip/mb_block_clk_wiz_1_0_1/mb_block_clk_wiz_1_0_sim_netlist.vhdl
 -- Design      : mb_block_clk_wiz_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -24,7 +24,6 @@ entity mb_block_clk_wiz_1_0_clk_wiz is
 end mb_block_clk_wiz_1_0_clk_wiz;
 
 architecture STRUCTURE of mb_block_clk_wiz_1_0_clk_wiz is
-  signal clk_in1_mb_block_clk_wiz_1_0 : STD_LOGIC;
   signal clk_out1_mb_block_clk_wiz_1_0 : STD_LOGIC;
   signal clkfbout_buf_mb_block_clk_wiz_1_0 : STD_LOGIC;
   signal clkfbout_mb_block_clk_wiz_1_0 : STD_LOGIC;
@@ -46,13 +45,6 @@ architecture STRUCTURE of mb_block_clk_wiz_1_0_clk_wiz is
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   attribute BOX_TYPE : string;
   attribute BOX_TYPE of clkf_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkin1_ibufg : label is "PRIMITIVE";
-  attribute CAPACITANCE : string;
-  attribute CAPACITANCE of clkin1_ibufg : label is "DONT_CARE";
-  attribute IBUF_DELAY_VALUE : string;
-  attribute IBUF_DELAY_VALUE of clkin1_ibufg : label is "0";
-  attribute IFD_DELAY_VALUE : string;
-  attribute IFD_DELAY_VALUE of clkin1_ibufg : label is "AUTO";
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
 begin
@@ -60,15 +52,6 @@ clkf_buf: unisim.vcomponents.BUFG
      port map (
       I => clkfbout_mb_block_clk_wiz_1_0,
       O => clkfbout_buf_mb_block_clk_wiz_1_0
-    );
-clkin1_ibufg: unisim.vcomponents.IBUF
-    generic map(
-      CCIO_EN => "TRUE",
-      IOSTANDARD => "DEFAULT"
-    )
-        port map (
-      I => clk_in1,
-      O => clk_in1_mb_block_clk_wiz_1_0
     );
 clkout1_buf: unisim.vcomponents.BUFG
      port map (
@@ -131,7 +114,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKFBOUT => clkfbout_mb_block_clk_wiz_1_0,
       CLKFBOUTB => NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED,
       CLKFBSTOPPED => NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED,
-      CLKIN1 => clk_in1_mb_block_clk_wiz_1_0,
+      CLKIN1 => clk_in1,
       CLKIN2 => '0',
       CLKINSEL => '1',
       CLKINSTOPPED => NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED,

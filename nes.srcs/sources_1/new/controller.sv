@@ -72,6 +72,8 @@ module controller(
     assign write_en = (cpu_addr == 16'h4016 && R_W_n == 1'b0 && cpu_data_in[0]);
     
     always_comb begin
+        gamepad1_buffer[7:0] = 0;
+        gamepad2_buffer[7:0] = 0;
         for ( int i = 31; i > 0; i -= 8) begin
             //Gamepad 1
             if (keycode0_gpio[i-:8] == 8'h1A || keycode1_gpio[i-:8] == 8'h1A) begin //W - Up
@@ -130,25 +132,28 @@ module controller(
     logic gamepad2_out;
     
     always_comb begin 
-        controller_out[7:1] = 7'b0000000;
+        controller_out = 8'b0000000;
+        
         if (cpu_addr == 16'h4016) begin
             controller_out[0] = gamepad1_out;
-        end else if (cpu_addr == 16'h4017) begin
+        end
+        if (cpu_addr == 16'h4017) begin
             controller_out[0] = gamepad2_out;
         end
     end
     
-    logic gamepad1_CLK;
-    logic gamepad2_CLK;
+    logic gamepad1_ena;
+    logic gamepad2_ena;
     
-    assign gamepad1_CLK = ~(R_W_n & cpu_addr == 16'h4016);
-    assign gamepad2_CLK = ~(R_W_n & cpu_addr == 16'h4017);
+    assign gamepad1_ena = ~(R_W_n & cpu_addr == 16'h4016);
+    assign gamepad2_ena = ~(R_W_n & cpu_addr == 16'h4017);
     
     shift_reg gamepad1(
         .parallel_in(gamepad1_buffer),
         .serial_in(1'b0),
         .ps(write_en),
-        .Clk(gamepad1_CLK),
+        .Clk(gamepad1_ena),
+        .ena(gamepad1_ena),
         
         .serial_out(gamepad1_out)
     );
@@ -157,7 +162,8 @@ module controller(
         .parallel_in(gamepad2_buffer),
         .serial_in(1'b0),
         .ps(write_en),
-        .Clk(gamepad2_CLK),
+        .Clk(gamepad2_ena),
+        .ena(gamepad2_ena),
         
         .serial_out(gamepad2_out)
     );
@@ -168,6 +174,7 @@ endmodule
 
 module shift_reg(
     input logic Clk,
+    input logic ena,
     input logic [7:0] parallel_in,
     input logic ps, //parallel or serial (parallel load signal)
     input logic serial_in,
@@ -179,17 +186,14 @@ module shift_reg(
     assign serial_out = Q[7];
     
     always_ff@(posedge Clk, posedge ps) begin
-        if (ps == 1'b1) begin
-            Q[7:0] <= parallel_in[7:0];
-        end else if (ps == 1'b0) begin
-            Q[7] <= Q[6];
-            Q[6] <= Q[5];
-            Q[5] <= Q[4];
-            Q[4] <= Q[3];
-            Q[3] <= Q[2];
-            Q[2] <= Q[1];
-            Q[1] <= Q[0];
-            Q[0] <= serial_in;
+        if (ena) begin 
+            if (ps == 1'b1) begin
+                Q[7:0] <= parallel_in[7:0];
+            end else begin
+                Q[7:0] <= {Q[6:0], serial_in};
+            end
+        end else begin
+            Q <= Q;
         end
     end
 
