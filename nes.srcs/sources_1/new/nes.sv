@@ -144,11 +144,6 @@ ppu_v2 ppu_inst(
     .nmi_n(nmi_n)
 );
 
-<<<<<<< Updated upstream
-
-/*
-=======
->>>>>>> Stashed changes
 controller controller(
     //inputs
     .Clk(Clk_buf),

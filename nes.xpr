@@ -43,6 +43,7 @@
     <Option Name="SimulatorGccVersionRiviera" Val="9.3.0"/>
     <Option Name="SimulatorGccVersionActiveHdl" Val="9.3.0"/>
     <Option Name="BoardPart" Val=""/>
+    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
@@ -89,63 +90,12 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/bd/mb_block/mb_block.bd">
+      <File Path="$PSRCDIR/sources_1/ip/pgr_rom/pgr_rom.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1.xci">
-          <Proxy FileSetName="mb_block_axi_gpio_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3.xci">
-          <Proxy FileSetName="mb_block_axi_gpio_0_3"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0.xci">
-          <Proxy FileSetName="mb_block_axi_timer_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0.xci">
-          <Proxy FileSetName="mb_block_axi_quad_spi_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xci">
-          <Proxy FileSetName="mb_block_axi_gpio_0_2"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_ilmb_v10_0_1/mb_block_ilmb_v10_0.xci">
-          <Proxy FileSetName="mb_block_ilmb_v10_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_ilmb_bram_if_cntlr_0_1/mb_block_ilmb_bram_if_cntlr_0.xci">
-          <Proxy FileSetName="mb_block_ilmb_bram_if_cntlr_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_xbar_0_1/mb_block_xbar_0.xci">
-          <Proxy FileSetName="mb_block_xbar_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_clk_wiz_1_0_1/mb_block_clk_wiz_1_0.xci">
-          <Proxy FileSetName="mb_block_clk_wiz_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_rst_clk_wiz_1_100M_0_1/mb_block_rst_clk_wiz_1_100M_0.xci">
-          <Proxy FileSetName="mb_block_rst_clk_wiz_1_100M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_uartlite_0_0_1/mb_block_axi_uartlite_0_0.xci">
-          <Proxy FileSetName="mb_block_axi_uartlite_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_microblaze_0_0_1/mb_block_microblaze_0_0.xci">
-          <Proxy FileSetName="mb_block_microblaze_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_dlmb_bram_if_cntlr_0_1/mb_block_dlmb_bram_if_cntlr_0.xci">
-          <Proxy FileSetName="mb_block_dlmb_bram_if_cntlr_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_lmb_bram_0_1/mb_block_lmb_bram_0.xci">
-          <Proxy FileSetName="mb_block_lmb_bram_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_microblaze_0_axi_intc_0_1/mb_block_microblaze_0_axi_intc_0.xci">
-          <Proxy FileSetName="mb_block_microblaze_0_axi_intc_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_mdm_1_0_1/mb_block_mdm_1_0.xci">
-          <Proxy FileSetName="mb_block_mdm_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_dlmb_v10_0_1/mb_block_dlmb_v10_0.xci">
-          <Proxy FileSetName="mb_block_dlmb_v10_0"/>
-        </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/ip/chr_rom_1/chr_rom.xci">
         <FileInfo>
@@ -154,12 +104,63 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/ip/pgr_rom/pgr_rom.xci">
+      <File Path="$PSRCDIR/sources_1/bd/mb_block/mb_block.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_dlmb_v10_0_1/mb_block_dlmb_v10_0.xci">
+          <Proxy FileSetName="mb_block_dlmb_v10_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_microblaze_0_0_1/mb_block_microblaze_0_0.xci">
+          <Proxy FileSetName="mb_block_microblaze_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_ilmb_v10_0_1/mb_block_ilmb_v10_0.xci">
+          <Proxy FileSetName="mb_block_ilmb_v10_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_dlmb_bram_if_cntlr_0_1/mb_block_dlmb_bram_if_cntlr_0.xci">
+          <Proxy FileSetName="mb_block_dlmb_bram_if_cntlr_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_ilmb_bram_if_cntlr_0_1/mb_block_ilmb_bram_if_cntlr_0.xci">
+          <Proxy FileSetName="mb_block_ilmb_bram_if_cntlr_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_xbar_0_1/mb_block_xbar_0.xci">
+          <Proxy FileSetName="mb_block_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_lmb_bram_0_1/mb_block_lmb_bram_0.xci">
+          <Proxy FileSetName="mb_block_lmb_bram_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_2/mb_block_axi_gpio_0_2.xci">
+          <Proxy FileSetName="mb_block_axi_gpio_0_2"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_timer_0_0/mb_block_axi_timer_0_0.xci">
+          <Proxy FileSetName="mb_block_axi_timer_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_quad_spi_0_0/mb_block_axi_quad_spi_0_0.xci">
+          <Proxy FileSetName="mb_block_axi_quad_spi_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_mdm_1_0_1/mb_block_mdm_1_0.xci">
+          <Proxy FileSetName="mb_block_mdm_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_clk_wiz_1_0_1/mb_block_clk_wiz_1_0.xci">
+          <Proxy FileSetName="mb_block_clk_wiz_1_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_3/mb_block_axi_gpio_0_3.xci">
+          <Proxy FileSetName="mb_block_axi_gpio_0_3"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_microblaze_0_axi_intc_0_1/mb_block_microblaze_0_axi_intc_0.xci">
+          <Proxy FileSetName="mb_block_microblaze_0_axi_intc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_gpio_0_1/mb_block_axi_gpio_0_1.xci">
+          <Proxy FileSetName="mb_block_axi_gpio_0_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_rst_clk_wiz_1_100M_0_1/mb_block_rst_clk_wiz_1_100M_0.xci">
+          <Proxy FileSetName="mb_block_rst_clk_wiz_1_100M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_block.bd" FileRelPathName="ip/mb_block_axi_uartlite_0_0_1/mb_block_axi_uartlite_0_0.xci">
+          <Proxy FileSetName="mb_block_axi_uartlite_0_0"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/src/VGA_controller.sv">
         <FileInfo>
@@ -391,7 +392,6 @@
       </File>
       <File Path="$PSRCDIR/sim_1/new/ppu_tb.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -399,7 +399,6 @@
       </File>
       <File Path="$PSRCDIR/sim_1/new/clk_tb.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -407,7 +406,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/ppu_test.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -776,9 +774,7 @@
     </Run>
     <Run Id="vga_clk_wiz_synth_1" Type="Ft3:Synth" SrcSet="vga_clk_wiz" Part="xc7s50csga324-1" ConstrsSet="vga_clk_wiz" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/vga_clk_wiz_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/vga_clk_wiz_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/vga_clk_wiz_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -788,9 +784,7 @@
     </Run>
     <Run Id="mb_block_axi_gpio_0_1_synth_1" Type="Ft3:Synth" SrcSet="mb_block_axi_gpio_0_1" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_gpio_0_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_axi_gpio_0_1_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_1_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_1_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -800,9 +794,7 @@
     </Run>
     <Run Id="mb_block_axi_gpio_0_3_synth_1" Type="Ft3:Synth" SrcSet="mb_block_axi_gpio_0_3" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_gpio_0_3" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_axi_gpio_0_3_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_3_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_3_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -812,9 +804,7 @@
     </Run>
     <Run Id="mb_block_axi_timer_0_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_axi_timer_0_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_timer_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_axi_timer_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_timer_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_timer_0_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -824,9 +814,7 @@
     </Run>
     <Run Id="mb_block_axi_quad_spi_0_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_axi_quad_spi_0_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_quad_spi_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_axi_quad_spi_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_quad_spi_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_quad_spi_0_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -836,9 +824,7 @@
     </Run>
     <Run Id="mb_block_axi_gpio_0_2_synth_1" Type="Ft3:Synth" SrcSet="mb_block_axi_gpio_0_2" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_gpio_0_2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_axi_gpio_0_2_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_2_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_2_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -848,9 +834,7 @@
     </Run>
     <Run Id="mb_block_ilmb_v10_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_ilmb_v10_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_ilmb_v10_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_ilmb_v10_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_ilmb_v10_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_ilmb_v10_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -860,9 +844,7 @@
     </Run>
     <Run Id="mb_block_ilmb_bram_if_cntlr_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_ilmb_bram_if_cntlr_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_ilmb_bram_if_cntlr_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_ilmb_bram_if_cntlr_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_ilmb_bram_if_cntlr_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_ilmb_bram_if_cntlr_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -872,9 +854,7 @@
     </Run>
     <Run Id="mb_block_xbar_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_xbar_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_xbar_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_xbar_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_xbar_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_xbar_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -884,9 +864,7 @@
     </Run>
     <Run Id="mb_block_clk_wiz_1_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_clk_wiz_1_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_clk_wiz_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_clk_wiz_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_clk_wiz_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_clk_wiz_1_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -896,9 +874,7 @@
     </Run>
     <Run Id="mb_block_rst_clk_wiz_1_100M_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_rst_clk_wiz_1_100M_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_rst_clk_wiz_1_100M_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_rst_clk_wiz_1_100M_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_rst_clk_wiz_1_100M_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_rst_clk_wiz_1_100M_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -908,9 +884,7 @@
     </Run>
     <Run Id="mb_block_axi_uartlite_0_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_axi_uartlite_0_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_uartlite_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_axi_uartlite_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_uartlite_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_uartlite_0_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -920,9 +894,7 @@
     </Run>
     <Run Id="mb_block_microblaze_0_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_microblaze_0_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_microblaze_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_microblaze_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_microblaze_0_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_microblaze_0_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -932,9 +904,7 @@
     </Run>
     <Run Id="mb_block_dlmb_bram_if_cntlr_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_dlmb_bram_if_cntlr_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_dlmb_bram_if_cntlr_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_dlmb_bram_if_cntlr_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_dlmb_bram_if_cntlr_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_dlmb_bram_if_cntlr_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -944,9 +914,7 @@
     </Run>
     <Run Id="mb_block_lmb_bram_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_lmb_bram_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_lmb_bram_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_lmb_bram_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_lmb_bram_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_lmb_bram_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -956,9 +924,7 @@
     </Run>
     <Run Id="mb_block_microblaze_0_axi_intc_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_microblaze_0_axi_intc_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_microblaze_0_axi_intc_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_microblaze_0_axi_intc_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_microblaze_0_axi_intc_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_microblaze_0_axi_intc_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -968,9 +934,7 @@
     </Run>
     <Run Id="mb_block_mdm_1_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_mdm_1_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_mdm_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_mdm_1_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_mdm_1_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_mdm_1_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -980,9 +944,7 @@
     </Run>
     <Run Id="mb_block_dlmb_v10_0_synth_1" Type="Ft3:Synth" SrcSet="mb_block_dlmb_v10_0" Part="xc7s50csga324-1" ConstrsSet="mb_block_dlmb_v10_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/mb_block_dlmb_v10_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_dlmb_v10_0_synth_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_dlmb_v10_0_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -1112,9 +1074,7 @@
     </Run>
     <Run Id="vga_clk_wiz_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="vga_clk_wiz" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="vga_clk_wiz_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/vga_clk_wiz_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/vga_clk_wiz_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1131,9 +1091,7 @@
     </Run>
     <Run Id="mb_block_axi_gpio_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_gpio_0_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_axi_gpio_0_1_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_1_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_1_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1150,9 +1108,7 @@
     </Run>
     <Run Id="mb_block_axi_gpio_0_3_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_gpio_0_3" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_axi_gpio_0_3_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_3_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_3_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1169,9 +1125,7 @@
     </Run>
     <Run Id="mb_block_axi_timer_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_timer_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_axi_timer_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_timer_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_timer_0_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1188,9 +1142,7 @@
     </Run>
     <Run Id="mb_block_axi_quad_spi_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_quad_spi_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_axi_quad_spi_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_quad_spi_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_quad_spi_0_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1207,9 +1159,7 @@
     </Run>
     <Run Id="mb_block_axi_gpio_0_2_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_gpio_0_2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_axi_gpio_0_2_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_2_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_gpio_0_2_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1226,9 +1176,7 @@
     </Run>
     <Run Id="mb_block_ilmb_v10_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_ilmb_v10_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_ilmb_v10_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_ilmb_v10_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_ilmb_v10_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1245,9 +1193,7 @@
     </Run>
     <Run Id="mb_block_ilmb_bram_if_cntlr_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_ilmb_bram_if_cntlr_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_ilmb_bram_if_cntlr_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_ilmb_bram_if_cntlr_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_ilmb_bram_if_cntlr_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1264,9 +1210,7 @@
     </Run>
     <Run Id="mb_block_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_xbar_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_xbar_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_xbar_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_xbar_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1283,9 +1227,7 @@
     </Run>
     <Run Id="mb_block_clk_wiz_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_clk_wiz_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_clk_wiz_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_clk_wiz_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_clk_wiz_1_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1302,9 +1244,7 @@
     </Run>
     <Run Id="mb_block_rst_clk_wiz_1_100M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_rst_clk_wiz_1_100M_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_rst_clk_wiz_1_100M_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_rst_clk_wiz_1_100M_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_rst_clk_wiz_1_100M_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1321,9 +1261,7 @@
     </Run>
     <Run Id="mb_block_axi_uartlite_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_axi_uartlite_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_axi_uartlite_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_axi_uartlite_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_axi_uartlite_0_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1340,9 +1278,7 @@
     </Run>
     <Run Id="mb_block_microblaze_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_microblaze_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_microblaze_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_microblaze_0_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_microblaze_0_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1359,9 +1295,7 @@
     </Run>
     <Run Id="mb_block_dlmb_bram_if_cntlr_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_dlmb_bram_if_cntlr_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_dlmb_bram_if_cntlr_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_dlmb_bram_if_cntlr_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_dlmb_bram_if_cntlr_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1378,9 +1312,7 @@
     </Run>
     <Run Id="mb_block_lmb_bram_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_lmb_bram_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_lmb_bram_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_lmb_bram_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_lmb_bram_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1397,9 +1329,7 @@
     </Run>
     <Run Id="mb_block_microblaze_0_axi_intc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_microblaze_0_axi_intc_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_microblaze_0_axi_intc_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_microblaze_0_axi_intc_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_microblaze_0_axi_intc_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1416,9 +1346,7 @@
     </Run>
     <Run Id="mb_block_mdm_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_mdm_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_mdm_1_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_mdm_1_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_mdm_1_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -1435,9 +1363,7 @@
     </Run>
     <Run Id="mb_block_dlmb_v10_0_impl_1" Type="Ft2:EntireDesign" Part="xc7s50csga324-1" ConstrsSet="mb_block_dlmb_v10_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="mb_block_dlmb_v10_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/mb_block_dlmb_v10_0_impl_1" AutoRQSDir="$PSRCDIR/utils_1/imports/mb_block_dlmb_v10_0_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
