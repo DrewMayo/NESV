@@ -32,15 +32,15 @@ module nes(
     output logic        hdmi_tmds_clk_n,
     output logic        hdmi_tmds_clk_p,
     output logic [2:0]  hdmi_tmds_data_n,
-    output logic [2:0]  hdmi_tmds_data_p,
+    output logic [2:0]  hdmi_tmds_data_p
     
      //USB signals
-    input logic [0:0] gpio_usb_int_tri_i,
-    output logic gpio_usb_rst_tri_o,
-    input logic usb_spi_miso,
-    output logic usb_spi_mosi,
-    output logic usb_spi_sclk,
-    output logic usb_spi_ss
+    //input logic [0:0] gpio_usb_int_tri_i,
+    //output logic gpio_usb_rst_tri_o,
+    //input logic usb_spi_miso,
+    //output logic usb_spi_mosi,
+    //output logic usb_spi_sclk,
+    //output logic usb_spi_ss
 );
 //clock
 logic rst_n;
@@ -57,6 +57,8 @@ logic [7:0] data_out;
 logic [15:0] addr;
 logic [15:0] ppu_addr;
 logic [7:0] data_in_chr_rom;
+logic [7:0] oamdma;
+logic       oamtransfer;
 logic write_n;
 logic sync;
 logic Clk_buf;
@@ -90,8 +92,11 @@ cpu cpu_inst(
     .data_in_cart(data_in_pgr_rom), //in from the cpu side
     .data_in_ppu(data_in_ppu),      //data from the ppu
     .data_in_controller(data_in_controller), //data from the controller
-    .nmi_n(nmi_n),                  
+    .nmi_n(nmi_n),                 
     
+    .oamdma(oamdma),
+    .oamtransfer(oamtransfer),
+          
     //outputs
     .data_out(data_out),
     .addr(addr),
@@ -128,13 +133,18 @@ ppu_v2 ppu_inst(
 
     .ppu_addr(ppu_addr),
     .data_in_ppu(data_in_chr_rom),
-
+    
+    .oamdma(oamdma),
+    .oamtransfer(oamtransfer),
+    
     .hdmi_clk_n(hdmi_tmds_clk_n),
     .hdmi_clk_p(hdmi_tmds_clk_p),
     .hdmi_tx_n(hdmi_tmds_data_n),
     .hdmi_tx_p(hdmi_tmds_data_p),
     .nmi_n(nmi_n)
 );
+
+
 /*
 controller controller(
     //inputs

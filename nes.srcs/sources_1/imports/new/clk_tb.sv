@@ -47,6 +47,7 @@ logic [7:0] P;
 logic [7:0] SP;
 logic [8:0] nesX;
 logic [8:0] nesY;
+logic [7:0] addr;
 
 integer count_cpu = 0;
 logic sync;

@@ -34,6 +34,8 @@ module ppu_v2(
     output logic [15:0]  ppu_addr,
     input logic  [7:0]   data_in_ppu,
 
+    output logic [7:0]   oamdma,
+    output logic         oamtransfer,
 
     output logic hdmi_clk_n,
     output logic hdmi_clk_p,
@@ -75,10 +77,14 @@ logic [7:0]  ppuctrl;
 logic        nmi_enable;
 logic        pt_base;
 logic        v_inc;
+logic        sprite_size;
+logic        sp_pt_base;
 
 assign nmi_enable = ppuctrl[7];
 assign pt_base = ppuctrl[4];
 assign v_inc = ppuctrl[2];
+assign sprite_size = ppuctrl[5];
+assign sp_pt_base = ppuctrl[3];
 
 logic [7:0] ppumask;
 logic [7:0] ppustatus;
@@ -92,7 +98,6 @@ logic [7:0] oamdata;
 logic [14:0] ppuscroll;
 logic [12:0] ppuaddr;
 logic [7:0] ppudata;
-logic [7:0] oamdma;
 
 logic [7:0] next_ppuctrl;
 logic [7:0] next_ppumask;
@@ -106,8 +111,6 @@ logic [7:0] next_oamdma;
 
 logic ppustatus_read;
 logic next_ppustatus_read;
-
-
 
 logic [14:0] v;
 logic [14:0] t;
@@ -138,8 +141,17 @@ logic next_ppudata_write;
 logic ppudata_read;
 logic next_ppudata_read;
 
+logic next_oamdata_write;
+logic oamdata_write;
+
+logic next_sprite_overflow;
+logic sprite_overflow;
+
 //state management
 logic [2:0] render_cycle;
+
+logic [7:0] oam_ram [255:0];
+logic next_oamtransfer;
 
 always_comb begin
   
@@ -152,6 +164,7 @@ always_comb begin
   next_ppumask = ppumask;
   next_ppustatus = ppustatus;
   next_oamaddr = oamaddr;
+  next_oamdata = oamdata;
   next_ppuscroll = ppuscroll;
   next_ppuaddr = ppuaddr;
   next_ppudata = ppudata;
@@ -160,10 +173,12 @@ always_comb begin
   next_ppudata_write = ppudata_write;
   next_data_out = data_out;
   next_ppudata_read = ppudata_read;
+  next_oamtransfer = oamtransfer;
   next_v = v;
   next_t = t;
   next_x = x;
   next_w = w;
+  next_oamdata_write = 1'b0;
 
 
   // -----------------------------------
@@ -175,6 +190,7 @@ always_comb begin
     next_ppumask = 0;
     next_ppustatus = 0;
     next_oamaddr = 0;
+    next_oamdata = 0;
     next_ppuscroll = 0;
     next_ppuaddr = 0;
     next_ppudata = 0;
@@ -187,6 +203,7 @@ always_comb begin
     next_w = 0;
     next_ppudata_write = 0;
     next_ppudata_read = 0;
+    next_oamtransfer = 0;
 
   // ------------------------------
   //          reads/writes
@@ -195,6 +212,8 @@ always_comb begin
   end else if (cpu_count == 0) begin
     next_ppustatus_read = 0;
     next_ppudata_write = 0;
+    next_oamdata_write = 0;
+    next_oamtransfer = 1'b0;
     // READS
     if (cpu_addr >= 16'h2000 && cpu_addr <= 16'h3FFF || cpu_addr == 16'h4014) begin
       if (write_n) begin
@@ -205,7 +224,7 @@ always_comb begin
             next_ppustatus_read = 1'b1;
           end
           3'b100 : begin
-            next_data_out = oamdata;
+            next_data_out = oam_ram[oamaddr];
           end
           3'b111 : begin
             next_data_out = ppudata;
@@ -216,6 +235,7 @@ always_comb begin
       end else begin
         if (cpu_addr == 16'h4014) begin
           next_oamdma = cpu_data;
+          next_oamtransfer = 1'b1;
         end else begin
           unique case(offset)
             3'b000: begin
@@ -231,6 +251,7 @@ always_comb begin
             end
             3'b100: begin
               next_oamdata = cpu_data;
+              next_oamdata_write = 1'b1;
             end
             3'b101: begin
               if (w == 1'b0) begin
@@ -270,6 +291,9 @@ always_comb begin
   if (ppudata_read) begin
     next_v += ((v_inc) ? 32 : 1);
     next_ppudata_read = 1'b0;
+  end
+  if (sprite_overflow) begin
+    next_ppustatus[5] = 1'b1;
   end
 
   // ------------------------------
@@ -374,19 +398,30 @@ end
   //
   //
 
+
+
 always_ff @(posedge ppu_clk) begin
   data_out <= next_data_out;
   ppustatus_read <= next_ppustatus_read;
   ppuctrl <= next_ppuctrl;
   ppumask <= next_ppumask;
   ppustatus <= next_ppustatus;
+  oamdata <= next_oamdata;
   oamaddr <= next_oamaddr;
   ppuscroll <= next_ppuscroll;
   ppuaddr <= next_ppuaddr;
   ppudata <= next_ppudata;
   oamdma <= next_oamdma;
+  oamdata_write <= next_oamdata_write;
+  if (oamdata_write) begin
+    oam_ram[oamaddr] <= next_oamdata;
+    oamaddr <= oamaddr + 1;
+  end else begin
+    oamaddr <= next_oamaddr;
+  end
   ppudata_write <= next_ppudata_write;
   ppudata_read <= next_ppudata_read;
+  oamtransfer <= next_oamtransfer;
   v <= next_v;
   t <= next_t;
   x <= next_x;
@@ -402,18 +437,22 @@ logic [7:0] name_table_reg;
 logic [7:0] pt_lo_reg;
 logic [7:0] pt_hi_reg;
 logic [7:0] at_reg;
+
+logic [7:0] next_name_table_reg;
+logic [7:0] next_pt_lo_reg;
+logic [7:0] next_pt_hi_reg;
+logic [7:0] next_at_reg; 
+
 logic [15:0] shift_reg_lo;
 logic [15:0] shift_reg_hi;
 logic [15:0] shift_reg_bg_hi;
 logic [15:0] shift_reg_bg_lo;
-logic [7:0] next_name_table_reg;
-logic [7:0] next_pt_lo_reg;
-logic [7:0] next_pt_hi_reg;
-logic [7:0] next_at_reg;
+
 logic [15:0] next_shift_reg_lo;
 logic [15:0] next_shift_reg_hi;
 logic [15:0] next_shift_reg_bg_hi;
 logic [15:0] next_shift_reg_bg_lo;
+
 
 logic [7:0] vram_read;
 logic [7:0] vram_read_reg;
@@ -475,7 +514,7 @@ always_comb begin
       end
       3'b100:
       begin
-        next_v_render = (ppuctrl[4] << 12) | (name_table_reg << 4) | v[14:12];
+        next_v_render = (pt_base << 12) | (name_table_reg << 4) | v[14:12];
       end
       3'b101:
       begin
@@ -484,7 +523,7 @@ always_comb begin
       end
       3'b110:
       begin
-        next_v_render = ((ppuctrl[4] << 12) | (name_table_reg << 4) | v[14:12]) + 8;
+        next_v_render = ((pt_base << 12) | (name_table_reg << 4) | v[14:12]) + 8;
       end
       3'b111:
       begin
@@ -545,25 +584,206 @@ always_ff @(posedge ppu_clk) begin
   nesX <= next_nesX;
 end
 
+// SPRITE EVALUATION
+
+logic [7:0] secondary_oam[31:0];
+logic [7:0] next_secondary_oam[31:0];
+logic [3:0] sprite_count = 0;
+logic [3:0] next_sprite_count = 0;
+logic [6:0] eval_index;
+logic [6:0] next_eval_index;
+logic [7:0] height;
+logic [7:0] next_sprite_idx;
+
+logic [7:0] sprite_Y[8];
+logic [7:0] sprite_tile[8];
+logic [7:0] sprite_attr[8];
+logic [7:0] sprite_X[8];
+
+logic [7:0] next_sprite_Y[8];
+logic [7:0] next_sprite_tile[8];
+logic [7:0] next_sprite_attr[8];
+logic [7:0] next_sprite_X[8];
+
+logic [15:0] vram_sprite_addr;
+logic [15:0] next_vram_sprite_addr;
+logic [7:0] sprite_pt_lo[8];
+logic [7:0] sprite_pt_hi[8];
+logic [7:0] next_sprite_pt_lo[8];
+logic [7:0] next_sprite_pt_hi[8];
+
+assign height = sprite_size ? 16 : 8;
+
+always_comb begin
+  for(int i = 0; i < 32; i++) begin
+    next_secondary_oam[i] = secondary_oam[i];
+  end
+  for(int i = 0; i < 8; i++) begin
+    next_sprite_Y[i] = sprite_Y[i];
+    next_sprite_tile[i] = sprite_tile[i];
+    next_sprite_attr[i] = sprite_attr[i];
+    next_sprite_X[i] = sprite_X[i];
+  end
+  for (int i = 0; i < 8; i++) begin
+    next_sprite_pt_lo[i] = sprite_pt_lo[i];
+    next_sprite_pt_hi[i] = sprite_pt_hi[i];
+  end
+  
+  next_sprite_count = sprite_count;
+  next_eval_index = eval_index;
+  next_vram_sprite_addr = vram_sprite_addr;
+
+  //sprite evaluation any stage only happens
+  //when rendering is enabled
+  if (ppumask & 8'h18 && nesY < 240) begin
+
+    //secondary oam clear
+    if (nesX >= 1 && nesX <= 64) begin
+      if (nesX == 1) begin
+        next_sprite_count = 4'b0;
+      end
+      next_secondary_oam[nesX >> 1] = 8'hFF;
+      next_eval_index = 7'h00;
+    end
+
+    // evaluation phase
+    else if (nesX >= 65 && nesX <= 256) begin
+    //even cycles
+      if (nesX[0] == 0) begin
+
+        automatic logic [7:0] sprite_y;
+        sprite_y = oam_ram[eval_index * 4];
+
+        if (nesY >= sprite_y && nesY < sprite_y + height) begin
+          if (sprite_count < 8) begin
+            for(int i = 0; i < 4; i++) begin
+              next_secondary_oam[sprite_count * 4 + i] = oam_ram[eval_index * 4 + i];
+            end
+            next_sprite_count = sprite_count + 1;
+          end else begin
+            next_sprite_overflow = 1'b1;
+          end
+        end
+        next_eval_index = eval_index + 1;
+      end
+    end else if (nesX >= 257 && nesX <= 320) begin
+      automatic logic [2:0] cycle = (nesX - 257) % 8;
+      automatic logic [2:0] idx = (nesX - 257) / 8;
+      unique case(cycle)
+        3'b000:
+        begin
+          next_sprite_Y[idx] = secondary_oam[idx * 4]; 
+        end
+        3'b001: begin
+          next_sprite_tile[idx] = secondary_oam[idx * 4 + 1];  
+        end
+        3'b010: begin
+          next_sprite_attr[idx] = secondary_oam[idx * 4 + 2];
+        end
+        3'b011: begin 
+          next_sprite_X[idx] = secondary_oam[idx * 4 + 3];
+        end
+        3'b100: 
+        begin
+          automatic logic [15:0] base;
+          automatic logic [7:0] tile = sprite_tile[idx];
+          automatic logic [7:0] row = nesY - sprite_Y[idx];
+          automatic logic [7:0] sprite_h = sprite_size ? 16 : 8;
+          if (sprite_attr[idx][7]) begin
+            row = (sprite_h - 1 - row);
+          end
+          // 8x16
+          if (sprite_size) begin
+             automatic logic [7:0] tile_num = tile & 8'hFE;
+             automatic logic upper = (row < 8);
+             row = upper ? row : row - 8;
+             base = (tile[0] ? 16'h1000 : 16'h0000);
+             next_vram_sprite_addr = base + ((tile_num + (upper ? 0 : 1)) << 4) + row; 
+          // 8x8 
+          end else begin
+             base = (sp_pt_base ? 16'h1000 : 16'h0000);
+             next_vram_sprite_addr = base + (tile << 4) + row;
+          end
+        end
+        3'b101: 
+        begin 
+           next_sprite_pt_lo[idx] = (sprite_attr[idx][6]) ?
+           {mem_read[0], mem_read[1], mem_read[2], mem_read[3], mem_read[4], mem_read[5], mem_read[6], mem_read[7]} : mem_read;
+        end
+        3'b110: begin 
+           next_vram_sprite_addr = vram_sprite_addr + 8;
+        end
+        3'b111: begin
+           next_sprite_pt_hi[idx] = (sprite_attr[idx][6]) ?
+           {mem_read[0], mem_read[1], mem_read[2], mem_read[3], mem_read[4], mem_read[5], mem_read[6], mem_read[7]} : mem_read;
+        end
+      endcase
+    end
+  end
+end
+
+always_ff @(posedge ppu_clk) begin
+    if (~rst_n) begin
+        for(int i = 0; i < 32; i++) begin
+            secondary_oam[i] <= 8'hFF;
+        end
+        for (int i = 0; i < 8; i++) begin
+            sprite_pt_lo[i] <= 0;
+            sprite_pt_hi[i] <= 0;
+        end
+        for(int i = 0; i < 8; i++) begin
+            sprite_Y[i] <= 0;
+            sprite_tile[i] <= 0;
+            sprite_attr[i] <= 0;
+            sprite_X[i] <= 0;
+        end
+        sprite_count <= 0;
+        eval_index <= 0;
+        sprite_overflow <= 0;
+        vram_sprite_addr <= 0;
+    end else begin
+        for(int i = 0; i < 32; i++) begin
+            secondary_oam[i] <= next_secondary_oam[i];
+        end
+        for (int i = 0; i < 8; i++) begin
+            sprite_pt_lo[i] <= next_sprite_pt_lo[i];
+            sprite_pt_hi[i] <= next_sprite_pt_hi[i];
+        end
+        for(int i = 0; i < 8; i++) begin
+            sprite_Y[i] <= next_sprite_Y[i];
+            sprite_tile[i] <= next_sprite_tile[i];
+            sprite_attr[i] <= next_sprite_attr[i];
+            sprite_X[i] <= next_sprite_X[i];
+        end
+        eval_index <= next_eval_index;
+        sprite_count <= next_sprite_count;
+        sprite_overflow <= next_sprite_overflow;
+        vram_sprite_addr <= next_vram_sprite_addr;
+    end
+end
+
+
 logic [15:0] addra;
 logic vram_ena;
 logic vram_wea;
 logic [15:0] v_mux;
 logic nes_ena_wr;
 
-
-
 logic pixel_lo, pixel_hi;
 logic [1:0] attr_bits;
-logic [3:0] color_index;
-logic [7:0] real_color;
-logic [7:0] pallete_ram[32];
-logic [7:0] next_pallete_ram[32];
+logic [4:0] color_index;
+(* keep = "true" *) logic [7:0] real_color;
+logic [7:0] pallete_ram[0:31];
+logic [7:0] next_pallete_ram;
 logic [4:0] pallete_idx;
 logic [4:0] pallete_addr;
 
 always_comb begin
-    v_mux = (nesY < 240 && (ppumask & 8'h18)) ? v_render : v;
+    if ((nesX >= 257 && nesX <= 320) && (ppumask & 8'h18) && nesY < 240) begin
+        v_mux = vram_sprite_addr;
+    end else begin
+        v_mux = (nesY < 240 && (ppumask & 8'h18)) ? v_render : v;
+    end
     pallete_addr = 0;
     ppu_addr = v_mux;
     vram_wea = 1'b0;
@@ -593,17 +813,15 @@ end
 logic [4:0] p_index;
 
 always_comb begin
+    next_pallete_ram = pallete_ram[p_index];
     p_index = 0;
-    for(int i = 0; i < 32; i++) begin
-        next_pallete_ram[i] = pallete_ram[i];
-    end
     if (ppudata_write && v_mux >= 16'h3F00 && v_mux < 16'h4000) begin
        p_index = v_mux[4:0];
        if (p_index == 5'h10 || p_index == 5'h14 ||
           p_index == 5'h18 || p_index == 5'h1C) begin
             p_index = p_index & 5'h0F;
        end
-       next_pallete_ram[pallete_addr] = ppudata;
+       next_pallete_ram = ppudata;
     end
     
     color_index = {shift_reg_bg_hi[15], shift_reg_bg_lo[15] , shift_reg_hi[15], shift_reg_lo[15]};
@@ -612,14 +830,23 @@ always_comb begin
     end else begin
         pallete_idx = color_index;
     end
+    
+    for(int i = 0; i < 8; i++) begin
+        if (nesX >= sprite_X[i] && nesX < sprite_X[i] + 8) begin
+            automatic logic [2:0] x_idx = nesX - sprite_X[i];
+            automatic logic [1:0] spr_pixel = {sprite_pt_hi[i][7 - x_idx], sprite_pt_lo[i][7 - x_idx]};
+            if (spr_pixel != 2'b00) begin
+                pallete_idx = {sprite_attr[i][1:0], spr_pixel} + 8'h10;
+            end
+        end
+    end
+    
     real_color = pallete_ram[pallete_idx];
 end
 
 
 always_ff @(posedge ppu_clk) begin
-    for(int i = 0; i < 32; i++) begin
-        pallete_ram[i] <= next_pallete_ram[i];
-    end
+    pallete_ram[p_index] <= next_pallete_ram;
 end
 
 
@@ -647,6 +874,7 @@ vram vram_inst(
     .web(1'b0),
     .enb(1'b1)
 );
+
 
 ppu_to_hdmi ppu_hdmi_inst(
     .nesX(nesX),
