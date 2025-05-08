@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="ASCII"?>
-<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="nesv_system" platform="C:/Users/Mark/Documents/NESV/workspace/nes/export/nes/nes.xpfm" platformUID="xilinx:::0.0(custom)" sysConfig="nes" runtime="cpp" rootFSLocation="" linuxImage="" sysroot="">
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="nesv_system" platform="/home/drew/ece385/NESV/workspace/nes3/export/nes3/nes3.xpfm" platformUID="xilinx:::0.0(custom)" sysConfig="nes3" runtime="cpp" dimmRepoPath="" rootFSLocation="" linuxImage="" sysroot="">
   <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.2061753392">
     <configBuildOptions xsi:type="systemproject:SystemOptions">
-      <applications name="nesv" domainName="standalone_microblaze_0" domainPrettyName="standalone_microblaze_0" appBuildConfig="Debug"/>
+      <applications name="nesv" domainName="standalone_domain" domainPrettyName="standalone on microblaze_0" appBuildConfig="Debug"/>
       <options xsi:type="sdkproject:SdkOptions" generateSdCard="true"/>
     </configBuildOptions>
     <lastBuildOptions xsi:type="systemproject:SystemOptions">
-      <applications name="nesv" domainName="standalone_microblaze_0" domainPrettyName="standalone_microblaze_0" appBuildConfig="Debug"/>
+      <applications name="nesv" domainName="standalone_domain" domainPrettyName="standalone on microblaze_0" appBuildConfig="Debug"/>
       <options xsi:type="sdkproject:SdkOptions" generateSdCard="true"/>
     </lastBuildOptions>
   </configuration>
   <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.1348563105">
     <configBuildOptions xsi:type="systemproject:SystemOptions">
-      <applications name="nesv" domainName="standalone_microblaze_0" domainPrettyName="standalone_microblaze_0" appBuildConfig="Release"/>
+      <applications name="nesv" domainName="standalone_domain" domainPrettyName="standalone_domain" appBuildConfig="Release"/>
       <options xsi:type="sdkproject:SdkOptions" generateSdCard="true"/>
     </configBuildOptions>
   </configuration>

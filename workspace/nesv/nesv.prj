@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="nesv" location="C:/Users/Mark/Documents/NESV/workspace/nesv" platform="C:/Users/Mark/Documents/NESV/workspace/nes/export/nes/nes.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="nesv_system" sysConfig="nes" runtime="cpp" cpu="standalone_microblaze_0" cpuInstance="microblaze_0" os="standalone" mssSignature="6fdf276950d9f1c8a0a0b0c3ba2c360f">
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="nesv" location="C:/Users/Mark/Documents/NESV/workspace/nesv" platform="/home/drew/ece385/NESV/workspace/nes3/export/nes3/nes3.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="nesv_system" sysConfig="nes3" runtime="cpp" cpu="standalone_domain" cpuInstance="microblaze_0" os="standalone" dimmRepoPath="" mssSignature="62e21619c78230d207cd3aef456dd652">
   <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.822025386">
     <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
     <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>

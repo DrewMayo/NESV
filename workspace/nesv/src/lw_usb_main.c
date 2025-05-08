@@ -62,8 +62,8 @@ void printHex (u32 data, unsigned channel)
 int main() {
     init_platform();
     XGpio_Initialize(&Gpio_hex, XPAR_GPIO_USB_KEYCODE_DEVICE_ID);
-   	XGpio_SetDataDirection(&Gpio_hex, 1, 0x00000000); //configure hex display GPIO
-   	XGpio_SetDataDirection(&Gpio_hex, 2, 0x00000000); //configure hex display GPIO
+   	 XGpio_SetDataDirection(&Gpio_hex, 1, 0x00000000); //configure hex display GPIO
+   	 XGpio_SetDataDirection(&Gpio_hex, 2, 0x00000000); //configure hex display GPIO
 
 
    	BYTE rcode;

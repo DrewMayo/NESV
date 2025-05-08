@@ -25,25 +25,25 @@ module nes(
     input logic         reset_rtl_0,
     
     //UART
-    //input logic         uart_rtl_0_rxd,
-    //output logic        uart_rtl_0_txd,
+    input logic         uart_rtl_0_rxd,
+    output logic        uart_rtl_0_txd,
     
     //HDMI
     output logic        hdmi_tmds_clk_n,
     output logic        hdmi_tmds_clk_p,
     output logic [2:0]  hdmi_tmds_data_n,
-    output logic [2:0]  hdmi_tmds_data_p
+    output logic [2:0]  hdmi_tmds_data_p,
     
     //USB signals
-    //input logic [0:0] gpio_usb_int_tri_i,
-    //output logic gpio_usb_rst_tri_o,
-    //input logic usb_spi_miso,
-    //output logic usb_spi_mosi,
-    //output logic usb_spi_sclk,
-    //output logic usb_spi_ss,
+    input logic [0:0] gpio_usb_int_tri_i,
+    output logic gpio_usb_rst_tri_o,
+    input logic usb_spi_miso,
+    output logic usb_spi_mosi,
+    output logic usb_spi_sclk,
+    output logic usb_spi_ss,
     
     //debug
-    //output logic [15:0] led_o
+    output logic [15:0] led_o
 );
 //clock
 logic rst_n;
@@ -149,7 +149,7 @@ ppu_v2 ppu_inst(
     .mirror(mirror)
 );
 
-/*
+
 controller controller(
     //inputs
     .Clk(Clk_buf),
@@ -176,7 +176,7 @@ controller controller(
     //debug
     .led_o(led_o)
    
-);*/
+);
 
 
 

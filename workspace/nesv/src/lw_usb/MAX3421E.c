@@ -35,6 +35,7 @@ void SPI_init() {
 
 	ConfigPtr = XSpi_LookupConfig(XPAR_SPI_USB_DEVICE_ID);
 	if (ConfigPtr == NULL) {
+		xil_printf("SPI Config not found! Check XPAR_SPI_USB_DEVICE_ID\n");
 		return XST_DEVICE_NOT_FOUND;
 	}
 
@@ -73,12 +74,16 @@ void MAXreg_wr(BYTE reg, BYTE val) {
 	//read return code from SPI peripheral (see Xilinx examples) 
 	//if return code != 0 print an error
 	//deselect MAX3421E (may not be necessary if you are using SPI peripheral)
+	xil_printf("here_now_0");
 	XSpi_SetSlaveSelect(&SpiInstance, 1); //select slave
+	xil_printf("here_now_1");
 	BYTE send[2] = {reg + 2, val}; // reg + 2 and val for write
 	int ret = XSpi_Transfer(&SpiInstance, send, NULL, 2);
+	xil_printf("here_now");
 	if (ret != 0) {
 		xil_printf("MAX_REG_WR, Error: %X\n", ret);
 	}
+	xil_printf("there");
 	XSpi_SetSlaveSelect(&SpiInstance, 0);
 }
 
