@@ -31,7 +31,7 @@ logic [7:0]  dout_pgr_rom;
 //reads
 always_comb begin
     data_out = 8'h00;
-    if (addr >= 16'hC000 && addr <= 16'hFFFF) begin
+    if (addr >= 16'h8000 && addr <= 16'hFFFF) begin
         data_out = dout_pgr_rom;
     end
 end

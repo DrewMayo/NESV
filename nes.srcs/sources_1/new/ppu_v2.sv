@@ -243,8 +243,8 @@ always_comb begin
                 next_data_out = mem_read;
             end else begin
                 next_data_out = read_buffer;
+                next_read_buffer = mem_read; 
             end
-            next_read_buffer = mem_read;
             next_ppudata_read = 1'b1;
           end
         endcase
@@ -484,8 +484,8 @@ logic [15:0] next_shift_reg_bg_lo;
 logic [7:0] vram_read;
 logic [7:0] vram_read_reg;
 
-logic [1:0] quadrent;
-logic [1:0] next_quadrent;
+logic [2:0] quadrent;
+logic [2:0] next_quadrent;
 
 always_comb begin
   next_name_table_reg = name_table_reg;
@@ -532,7 +532,7 @@ always_comb begin
       3'b010:
       begin
         next_v_render = (16'h23C0 | (v & 16'h0C00) | ((v >> 4) & 16'h0038) | ((v >> 2) & 16'h0007));
-        next_quadrent = {v[6], v[1]} << 1;
+        next_quadrent = {v[6],v[1]} << 1;
       end
       3'b011:
       begin
@@ -768,7 +768,6 @@ always_ff @(posedge ppu_clk) begin
         eval_index <= 0;
         sprite_overflow <= 0;
         vram_sprite_addr <= 0;
-        sprite_0_hit <= 0;
     end else begin
         for(int i = 0; i < 32; i++) begin
             secondary_oam[i] <= next_secondary_oam[i];
@@ -784,7 +783,6 @@ always_ff @(posedge ppu_clk) begin
             sprite_X[i] <= next_sprite_X[i];
         end
         eval_index <= next_eval_index;
-        sprite_0_hit <= next_sprite_0_hit;
         sprite_count <= next_sprite_count;
         sprite_overflow <= next_sprite_overflow;
         vram_sprite_addr <= next_vram_sprite_addr;
@@ -846,6 +844,7 @@ always_comb begin
     next_sprite_0_hit = sprite_0_hit;
     next_pallete_ram = pallete_ram[p_index];
     p_index = 0;
+    pallete_idx = 0;
     if (ppudata_write && v_mux >= 16'h3F00 && v_mux < 16'h4000) begin
        p_index = v_mux[4:0];
        if (p_index == 5'h10 || p_index == 5'h14 ||
@@ -867,7 +866,11 @@ always_comb begin
             automatic logic [2:0] x_idx = nesX - sprite_X[i];
             automatic logic [1:0] spr_pixel = {sprite_pt_hi[i][7 - x_idx], sprite_pt_lo[i][7 - x_idx]};
             if (spr_pixel != 2'b00) begin
-                pallete_idx = {sprite_attr[i][1:0], spr_pixel} + 8'h10;
+                automatic logic bg_transparent = color_index[1:0] == 2'b00;
+                automatic logic prio = sprite_attr[i][5];
+                if (bg_transparent || !prio) begin 
+                    pallete_idx = {sprite_attr[i][1:0], spr_pixel} + 8'h10;
+                end
             end
             //sprite 0 hits
             if (i == 0 && !sprite_0_hit && nesY >= sprite_Y[0] && (nesY < sprite_Y[0] + height) 
