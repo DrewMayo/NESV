@@ -63,6 +63,7 @@ logic write_n;
 logic sync;
 logic Clk_buf;
 logic nmi_n;
+logic mirror;
 
 assign rst_n = ~reset_rtl_0;
 
@@ -104,18 +105,18 @@ cpu cpu_inst(
     .sync(sync)
 );
 
-pgr_rom_mod pgr_rom_inst(
-    .master_clk(master_clk),
-    .addr(addr),
-    .data_out(data_in_pgr_rom) //in from cpu side
-);
-
-chr_rom_mod chr_rom_inst(
+cart cart_inst(
     .master_clk(master_clk),
     .ppu_clk(ppu_clk),
-    .addr(ppu_addr),
-    .data_out(data_in_chr_rom)
+    .cpu_addr(addr),
+    .ppu_addr(ppu_addr),
+    
+    .cpu_data(data_in_pgr_rom),
+    .ppu_data(data_in_chr_rom),
+    .mirror(mirror)
 );
+
+
 
 
 ppu_v2 ppu_inst(
@@ -141,9 +142,10 @@ ppu_v2 ppu_inst(
     .hdmi_clk_p(hdmi_tmds_clk_p),
     .hdmi_tx_n(hdmi_tmds_data_n),
     .hdmi_tx_p(hdmi_tmds_data_p),
-    .nmi_n(nmi_n)
+    .nmi_n(nmi_n),
+    .mirror(mirror)
 );
-
+/*
 controller controller(
     //inputs
     .Clk(Clk_buf),
@@ -167,7 +169,7 @@ controller controller(
     //outputs
     .controller_out(data_in_controller)
    
-);
+);*/
 
 
 

@@ -37,7 +37,7 @@ always_comb begin
 end
 
 pgr_rom pgr_rom_inst(
-    .addra(addr - 16'hC000),
+    .addra(addr - 16'h8000),
     .clka(master_clk),              //cheat bram by using a faster clock
     .douta(dout_pgr_rom)
 );
