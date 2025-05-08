@@ -5,7 +5,7 @@
     "cell_name": "microblaze_0_local_memory/dlmb_v10",
     "component_reference": "xilinx.com:ip:lmb_v10:3.0",
     "ip_revision": "12",
-    "gen_directory": "../../../../../../6_2.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_v10_0_1",
+    "gen_directory": "../../../../../../nes.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_v10_0_1",
     "parameters": {
       "component_parameters": {
         "C_LMB_DWIDTH": [ { "value": "32", "value_src": "propagated", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -41,7 +41,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "12" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../6_2.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_v10_0_1" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../nes.gen/sources_1/bd/mb_block/ip/mb_block_dlmb_v10_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2022.2" } ],
@@ -137,7 +137,7 @@
             "FREQ_HZ": [ { "value": "100000000", "value_permission": "bd", "resolve_type": "user", "format": "long", "usage": "all" } ],
             "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
             "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
-            "CLK_DOMAIN": [ { "value": "mb_block_clk_100MHz", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "/clk_wiz_1_clk_out1", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "ASSOCIATED_PORT": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
             "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
           },
