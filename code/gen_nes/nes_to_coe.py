@@ -1,39 +1,59 @@
-def nes_to_coe():
-    # Get user input
-    nes_file = input("Enter the path to your .nes file: ").strip('"')  # Remove quotes if dragged into terminal
-    coe_file = input("Enter the output .coe filename (e.g., 'prg_rom.coe'): ").strip('"')
+import sys
+import os
+
+def write_coe(data, filename):
+    with open(filename, 'w') as f:
+        f.write("memory_initialization_radix=16;\n")
+        f.write("memory_initialization_vector=\n")
+        for i, byte in enumerate(data):
+            sep = ";\n" if i == len(data) - 1 else ",\n"
+            f.write(f"{byte:02X}{sep}")
+    print(f"Wrote {filename} ({len(data)} bytes)")
+
+def extract_nes(nes_file):
+    with open(nes_file, 'rb') as f:
+        data = f.read()
+
+    if data[0:4] != b"NES\x1a":
+        raise ValueError("Invalid NES file: missing iNES header")
+
+    header = data[:16]
+    prg_blocks = data[4]
+    chr_blocks = data[5]
+    flags6 = data[6]
+    has_trainer = flags6 & 0x04
+
+    offset = 16
+    if has_trainer:
+        offset += 512
+
+    prg_size = prg_blocks * 16 * 1024
+    chr_size = chr_blocks * 8 * 1024
+
+    prg = data[offset : offset + prg_size]
+    if prg_size == 16 * 1024:
+        prg *= 2  # Mirror 16K PRG to 32K
+
+    chr = data[offset + prg_size : offset + prg_size + chr_size]
+
+    base = os.path.splitext(os.path.basename(nes_file))[0]
+
+    write_coe(header, f"{base}_header.coe")
+    write_coe(prg, f"{base}_prg.coe")
+
+    if chr_size > 0:
+        write_coe(chr, f"{base}_chr.coe")
+    else:
+        print("CHR ROM not present (uses CHR RAM)")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python nes_to_coe.py <file.nes>")
+        sys.exit(1)
 
     try:
-        with open(nes_file, 'rb') as f:
-            header = f.read(16)  # Read NES header
-            if len(header) < 16:
-                raise ValueError("Invalid NES file (header too short)")
-
-            prg_rom_size = header[4] * 16 * 1024  # PRG ROM size (16KB units)
-            prg_rom = f.read(prg_rom_size)  # Extract PRG ROM data
-
-            if len(prg_rom) != prg_rom_size:
-                raise ValueError("PRG ROM size mismatch (corrupt .nes file?)")
-
-        # Generate COE content
-        coe_content = (
-            "memory_initialization_radix=16;\n"
-            "memory_initialization_vector=\n"
-        )
-        hex_bytes = [f"{byte:02x}" for byte in prg_rom]
-        coe_content += ",\n".join(hex_bytes) + ";"
-
-        # Save to .coe file
-        with open(coe_file, 'w') as f:
-            f.write(coe_content)
-
-        print(f"Success! PRG ROM converted to '{coe_file}'")
-    except FileNotFoundError:
-        print("Error: NES file not found.")
+        extract_nes(sys.argv[1])
     except Exception as e:
-        print(f"Error: {e}")
+        print("Error:", e)
+        sys.exit(1)
 
-# Run the converter
-if __name__ == "__main__":
-    print("=== NES to COE (PRG ROM) Converter ===")
-    nes_to_coe()

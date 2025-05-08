@@ -42,7 +42,9 @@ module ppu_v2(
     output logic [2:0] hdmi_tx_n,
     output logic [2:0] hdmi_tx_p,
 
-    output logic nmi_n
+    output logic nmi_n,
+    
+    input logic mirror
 );
 
 logic [1:0] cpu_count;
@@ -72,7 +74,8 @@ end
 
 logic [7:0] next_data_out;
 logic [2:0] offset;
-
+logic [15:0] v_mux;
+logic [7:0] mem_read;
 logic [7:0]  ppuctrl;
 logic        nmi_enable;
 logic        pt_base;
@@ -135,6 +138,7 @@ logic [8:0] nesX;
 logic [8:0] nesY;
 logic [8:0] next_nesX;
 logic [8:0] next_nesY;
+logic [7:0] read_buffer;
 logic ppudata_write;
 logic next_ppudata_write;
 
@@ -147,11 +151,16 @@ logic oamdata_write;
 logic next_sprite_overflow;
 logic sprite_overflow;
 
+logic next_sprite_0_hit;
+logic sprite_0_hit;
+
+
 //state management
 logic [2:0] render_cycle;
 
 logic [7:0] oam_ram [255:0];
 logic next_oamtransfer;
+logic [7:0] next_read_buffer;
 
 always_comb begin
   
@@ -179,6 +188,7 @@ always_comb begin
   next_x = x;
   next_w = w;
   next_oamdata_write = 1'b0;
+  next_read_buffer = read_buffer;
 
 
   // -----------------------------------
@@ -204,6 +214,7 @@ always_comb begin
     next_ppudata_write = 0;
     next_ppudata_read = 0;
     next_oamtransfer = 0;
+    next_read_buffer = 0;
 
   // ------------------------------
   //          reads/writes
@@ -228,6 +239,12 @@ always_comb begin
           end
           3'b111 : begin
             next_data_out = ppudata;
+             if (v_mux >= 16'h3F00 && v_mux < 16'h4000) begin
+                next_data_out = mem_read;
+            end else begin
+                next_data_out = read_buffer;
+            end
+            next_read_buffer = mem_read;
             next_ppudata_read = 1'b1;
           end
         endcase
@@ -295,6 +312,10 @@ always_comb begin
   if (sprite_overflow) begin
     next_ppustatus[5] = 1'b1;
   end
+  if (sprite_0_hit) begin
+    next_ppustatus[6] = 1'b1;
+  end
+
 
   // ------------------------------
   //            handle vblank
@@ -305,8 +326,13 @@ always_comb begin
     next_ppustatus[7] = 1'b1;
   end
   //vblank disable
-  if ((nesX == 0 && nesY == 261) || ppustatus_read) begin
+  if (nesX == 0 && nesY == 261) begin
     next_ppustatus[7] = 1'b0;
+  end
+  if (ppustatus_read) begin
+    next_ppustatus[7] = 1'b0;
+    next_ppustatus[6] = 1'b0;
+    next_ppustatus[5] = 1'b0;
   end
 
 
@@ -426,6 +452,7 @@ always_ff @(posedge ppu_clk) begin
   t <= next_t;
   x <= next_x;
   w <= next_w;
+  read_buffer <= next_read_buffer;
 end
 
 logic [15:0] v_render;
@@ -456,7 +483,7 @@ logic [15:0] next_shift_reg_bg_lo;
 
 logic [7:0] vram_read;
 logic [7:0] vram_read_reg;
-logic [7:0] mem_read;
+
 logic [1:0] quadrent;
 logic [1:0] next_quadrent;
 
@@ -505,7 +532,7 @@ always_comb begin
       3'b010:
       begin
         next_v_render = (16'h23C0 | (v & 16'h0C00) | ((v >> 4) & 16'h0038) | ((v >> 2) & 16'h0007));
-        next_quadrent = ({v_render[6], v_render[1]} * 2) * 2'b11;
+        next_quadrent = {v[6], v[1]} << 1;
       end
       3'b011:
       begin
@@ -741,6 +768,7 @@ always_ff @(posedge ppu_clk) begin
         eval_index <= 0;
         sprite_overflow <= 0;
         vram_sprite_addr <= 0;
+        sprite_0_hit <= 0;
     end else begin
         for(int i = 0; i < 32; i++) begin
             secondary_oam[i] <= next_secondary_oam[i];
@@ -756,6 +784,7 @@ always_ff @(posedge ppu_clk) begin
             sprite_X[i] <= next_sprite_X[i];
         end
         eval_index <= next_eval_index;
+        sprite_0_hit <= next_sprite_0_hit;
         sprite_count <= next_sprite_count;
         sprite_overflow <= next_sprite_overflow;
         vram_sprite_addr <= next_vram_sprite_addr;
@@ -766,7 +795,7 @@ end
 logic [15:0] addra;
 logic vram_ena;
 logic vram_wea;
-logic [15:0] v_mux;
+
 logic nes_ena_wr;
 
 logic pixel_lo, pixel_hi;
@@ -788,15 +817,16 @@ always_comb begin
     ppu_addr = v_mux;
     vram_wea = 1'b0;
     vram_ena = 1'b0;
-    addra = (v_mux - 16'h2000) & 16'h07FF;
+    addra = (mirror) ? {1'b0, v_mux[9:0]} : {v_mux[11], v_mux[9:0]};
     if (v_mux < 16'h2000) begin
       mem_read = data_in_ppu;
     end else if (v_mux >= 16'h2000 && v_mux < 16'h3F00) begin
       vram_ena = 1'b1;
       mem_read = vram_read;
       if (ppudata_write) begin
-            vram_wea = 1'b1;
-        end
+          vram_wea = 1'b1;
+      end
+      
     end else if (v_mux >= 16'h3F00 && v_mux < 16'h4000) begin
         pallete_addr = v_mux[4:0];
         if (pallete_addr == 5'h10 || pallete_addr == 5'h14 ||
@@ -813,6 +843,7 @@ end
 logic [4:0] p_index;
 
 always_comb begin
+    next_sprite_0_hit = sprite_0_hit;
     next_pallete_ram = pallete_ram[p_index];
     p_index = 0;
     if (ppudata_write && v_mux >= 16'h3F00 && v_mux < 16'h4000) begin
@@ -824,7 +855,7 @@ always_comb begin
        next_pallete_ram = ppudata;
     end
     
-    color_index = {shift_reg_bg_hi[15], shift_reg_bg_lo[15] , shift_reg_hi[15], shift_reg_lo[15]};
+    color_index = {shift_reg_bg_hi[15 - x], shift_reg_bg_lo[15 - x] , shift_reg_hi[15 - x], shift_reg_lo[15 - x]};
     if (color_index[1:0] == 2'b00) begin
         pallete_idx = 5'h00;
     end else begin
@@ -838,6 +869,12 @@ always_comb begin
             if (spr_pixel != 2'b00) begin
                 pallete_idx = {sprite_attr[i][1:0], spr_pixel} + 8'h10;
             end
+            //sprite 0 hits
+            if (i == 0 && !sprite_0_hit && nesY >= sprite_Y[0] && (nesY < sprite_Y[0] + height) 
+                && color_index[1:0] != 2'b00 && spr_pixel != 2'b00 && (ppumask[4] && ppumask[3])
+                && (nesX < 256 && nesY < 240) && nesX > 0) begin
+                    next_sprite_0_hit = 1'b1;
+            end
         end
     end
     
@@ -847,6 +884,11 @@ end
 
 always_ff @(posedge ppu_clk) begin
     pallete_ram[p_index] <= next_pallete_ram;
+    if (~rst_n) begin
+        sprite_0_hit <= 1'b0;
+    end else begin
+        sprite_0_hit <= next_sprite_0_hit;
+    end
 end
 
 
@@ -879,7 +921,7 @@ vram vram_inst(
 ppu_to_hdmi ppu_hdmi_inst(
     .nesX(nesX),
     .nesY(nesY),
-    //.nesData(at_reg),
+    //.nesData(doutb),
     .nesData(real_color),
     .nes_ena_wr(nes_ena_wr),
     .nes_ena(1'b1),
