@@ -5,7 +5,7 @@
     "cell_name": "mdm_1",
     "component_reference": "xilinx.com:ip:mdm:3.2",
     "ip_revision": "23",
-    "gen_directory": "../../../../../../6_2.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0_1",
+    "gen_directory": "../../../../../../nes.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0_1",
     "parameters": {
       "component_parameters": {
         "C_XMTC": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "all" } ],
@@ -100,7 +100,7 @@
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
         "IPREVISION": [ { "value": "23" } ],
         "MANAGED": [ { "value": "TRUE" } ],
-        "OUTPUTDIR": [ { "value": "../../../../../../6_2.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0_1" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../nes.gen/sources_1/bd/mb_block/ip/mb_block_mdm_1_0_1" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
         "SWVERSION": [ { "value": "2022.2" } ],

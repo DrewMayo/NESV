@@ -32,15 +32,18 @@ module nes(
     output logic        hdmi_tmds_clk_n,
     output logic        hdmi_tmds_clk_p,
     output logic [2:0]  hdmi_tmds_data_n,
-    output logic [2:0]  hdmi_tmds_data_p
+    output logic [2:0]  hdmi_tmds_data_p,
     
-     //USB signals
-    //input logic [0:0] gpio_usb_int_tri_i,
-    //output logic gpio_usb_rst_tri_o,
-    //input logic usb_spi_miso,
-    //output logic usb_spi_mosi,
-    //output logic usb_spi_sclk,
-    //output logic usb_spi_ss
+    //USB signals
+    input logic [0:0] gpio_usb_int_tri_i,
+    output logic gpio_usb_rst_tri_o,
+    input logic usb_spi_miso,
+    output logic usb_spi_mosi,
+    output logic usb_spi_sclk,
+    output logic usb_spi_ss,
+    
+    //debug
+    output logic [15:0] led_o
 );
 //clock
 logic rst_n;
@@ -167,7 +170,10 @@ controller controller(
     .R_W_n(write_n),
     
     //outputs
-    .controller_out(data_in_controller)
+    .controller_out(data_in_controller),
+    
+    //debug
+    .led_o(led_o)
    
 );*/
 

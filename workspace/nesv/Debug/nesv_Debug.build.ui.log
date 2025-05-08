@@ -1,4 +1,4 @@
-2025-05-07T15:28:58.023917100255-15:28:58 **** Incremental Build of configuration Debug for project nesv ****
+2025-05-07T23:09:12.471761500255-23:09:12 **** Incremental Build of configuration Debug for project nesv ****
 000-make all 
 000-'Building file: ../src/lw_usb/MAX3421E.c'
 000-'Invoking: MicroBlaze gcc compiler'
@@ -74,5 +74,5 @@
 000-'Finished building: nesv.elf.size'
 000-' '
 00255-
-15:29:00 Build Finished (took 2s.745ms)
+23:09:15 Build Finished (took 2s.777ms)
 

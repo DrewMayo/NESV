@@ -17,8 +17,26 @@ domain create -name {standalone_microblaze_0} -display-name {standalone_microbla
 platform generate -domains 
 platform active {nes}
 platform generate -quick
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate
 platform clean
 platform generate
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform active {nes}
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
 platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
 platform generate -domains 
 platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
@@ -26,5 +44,15 @@ platform generate -domains
 platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
 platform generate -domains 
 platform active {nes}
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
+platform generate -domains 
 platform config -updatehw {C:/Users/Mark/Documents/NESV/nes.xsa}
 platform generate -domains 

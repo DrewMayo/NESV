@@ -28,3 +28,24 @@ set_property IOSTANDARD LVCMOS33 [get_ports gpio_usb_rst_tri_o]
 set_property PACKAGE_PIN V13 [get_ports gpio_usb_rst_tri_o]
 set_property PACKAGE_PIN T12 [get_ports usb_spi_ss]
 set_property IOSTANDARD LVCMOS33 [get_ports usb_spi_ss]
+
+
+set_property -dict {PACKAGE_PIN C13 IOSTANDARD LVCMOS33} [get_ports {led_o[0]}]
+set_property -dict {PACKAGE_PIN C14 IOSTANDARD LVCMOS33} [get_ports {led_o[1]}]
+set_property -dict {PACKAGE_PIN D14 IOSTANDARD LVCMOS33} [get_ports {led_o[2]}]
+set_property -dict {PACKAGE_PIN D15 IOSTANDARD LVCMOS33} [get_ports {led_o[3]}]
+set_property -dict {PACKAGE_PIN D16 IOSTANDARD LVCMOS33} [get_ports {led_o[4]}]
+set_property -dict {PACKAGE_PIN F18 IOSTANDARD LVCMOS33} [get_ports {led_o[5]}]
+set_property -dict {PACKAGE_PIN E17 IOSTANDARD LVCMOS33} [get_ports {led_o[6]}]
+set_property -dict {PACKAGE_PIN D17 IOSTANDARD LVCMOS33} [get_ports {led_o[7]}]
+
+set_property -dict {PACKAGE_PIN C17 IOSTANDARD LVCMOS33} [get_ports {led_o[8]}]
+set_property -dict {PACKAGE_PIN B18 IOSTANDARD LVCMOS33} [get_ports {led_o[9]}]
+set_property -dict {PACKAGE_PIN A17 IOSTANDARD LVCMOS33} [get_ports {led_o[10]}]
+set_property -dict {PACKAGE_PIN B17 IOSTANDARD LVCMOS33} [get_ports {led_o[11]}]
+set_property -dict {PACKAGE_PIN C18 IOSTANDARD LVCMOS33} [get_ports {led_o[12]}]
+set_property -dict {PACKAGE_PIN D18 IOSTANDARD LVCMOS33} [get_ports {led_o[13]}]
+set_property -dict {PACKAGE_PIN E18 IOSTANDARD LVCMOS33} [get_ports {led_o[14]}]
+set_property -dict {PACKAGE_PIN G17 IOSTANDARD LVCMOS33} [get_ports {led_o[15]}]
+
+
