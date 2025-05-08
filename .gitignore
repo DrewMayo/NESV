@@ -12,7 +12,6 @@
 *.gen/
 *.webtalk/
 .Xil/
-nes.srcs/
 workspace/.metadata/
 workspace/.Xil/
 workspace/**/Debug/
