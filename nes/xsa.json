@@ -1,0 +1,95 @@
+{
+    "versionMajor": "0",
+    "versionMinor": "0",
+    "usesPR": "false",
+    "platformState": "pre_synth",
+    "topModuleName": "nes",
+    "acceleratorBinaryFormat": "xclbin2",
+    "acceleratorBinaryContent": "bitstream",
+    "validAcceleratorBinaryContentValues": "dcp,bitstream",
+    "dcpFunctionStripped": "false",
+    "dcpEncrypted": "false",
+    "defaultOutputType": "hw_export",
+    "designIntent": {
+        "dataCenter": {
+            "value": "false",
+            "explicit": "false"
+        },
+        "embedded": {
+            "value": "false",
+            "explicit": "false"
+        },
+        "externalHost": {
+            "value": "false",
+            "explicit": "false"
+        },
+        "serverManaged": {
+            "value": "false",
+            "explicit": "false"
+        }
+    },
+    "devices": [
+        {
+            "name": "fpga0",
+            "type": "8",
+            "fpgaPart": "spartan7:xc7s50:csga324:-1",
+            "part": {
+                "name": "xc7s50csga324-1",
+                "architecture": "spartan7",
+                "device": "xc7s50",
+                "package": "csga324",
+                "speedGrade": "-1"
+            },
+            "numSLRs": "1",
+            "core": {
+                "name": "OCL_REGION_0",
+                "type": "clc_region",
+                "numComputeUnits": "60",
+                "availableResources": {
+                    "bramCount": "41",
+                    "dspCount": "117",
+                    "lutCount": "29541",
+                    "registerCount": "62462"
+                }
+            }
+        }
+    ],
+    "files": [
+        {
+            "name": "nes.bit",
+            "type": "FULL_BIT"
+        },
+        {
+            "name": "nes.mmi",
+            "type": "MMI"
+        }
+    ],
+    "vendor": "xilinx",
+    "description": "Vivado generated Hardware Platform",
+    "uniqueName": "xilinx:::0.0",
+    "fpgaPart": "spartan7",
+    "fpgaDevice": "xc7s50",
+    "unifiedPlatform": "true",
+    "expandablePlatform": "false",
+    "hardware": "true",
+    "softwareEmulation": "true",
+    "hardwareEmulation": "false",
+    "hardwareEmuPlatform": "false",
+    "usesNIFD": "false",
+    "generatedName": "Vivado",
+    "generatedVersion": "2022.2",
+    "generatedChangeList": "3671981",
+    "generatedIpChangeList": "3669848",
+    "generatedTimestamp": "Thu May  8 21:52:25 2025",
+    "idCode": "0362f093",
+    "designIDs": {
+        "designID": "2673189633"
+    },
+    "resources": [
+        {
+            "type": "REG",
+            "count": "62462"
+        }
+    ]
+}
+

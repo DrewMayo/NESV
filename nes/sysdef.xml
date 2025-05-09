@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Project Version="1" Minor="7" DIGEST="">
+	<TOOL_VERSION Version="2022.2"/>
+	<MODE Name="Post-Synthesis"/>
+	<SYSTEMINFO BOARD="" PART="xc7s50csga324-1" ARCH="spartan7" PACKAGE="csga324" DEVICE="7s50" SPEED="-1" LUT="32600" FF="65200" BRAM="75" DSP="120"/>
+	<PART Name="xc7s50csga324-1">
+		<SSIT IS_SSIT="0"/>
+		<NUM_OF_SLRS Value="1"/>
+	</PART>
+	<HIERARCHY Name="nes"/>
+	<File Type="HW_HANDOFF" Name="mb_block.hwh" src_db="mb_block.hwdef" DESIGN_HIERARCHY="controller/mb_block_i" BD_TYPE="DEFAULT_BD">
+	</File>
+	<File Type="BDA" Name="mb_block.bda" src_db="mb_block.hwdef">
+	</File>
+	<File Type="BIT" Name="nes.bit" src_db="temp.hdf">
+	</File>
+	<File Type="MMI" Name="nes.mmi" src_db="temp.hdf">
+	</File>
+	<File Type="AIE_PRIMITIVE" Name="aie_primitive.json" src_db="temp.hdf">
+	</File>
+	<USEDRESOURCES LUT="3059" FF="2738" BRAM="34" DSP="3"/>
+</Project>
+

@@ -25,8 +25,8 @@ module nes(
     input logic         reset_rtl_0,
     
     //UART
-    input logic         uart_rtl_0_rxd,
-    output logic        uart_rtl_0_txd,
+    //input logic         uart_rtl_0_rxd,
+    //output logic        uart_rtl_0_txd,
     
     //HDMI
     output logic        hdmi_tmds_clk_n,

@@ -37,3 +37,5 @@ platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
 platform generate -domains 
 platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
 platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
