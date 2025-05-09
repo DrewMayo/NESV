@@ -101,7 +101,8 @@ int main() {
 					xil_printf("%x ", kbdbuf.keycode[i]);
 				}
 				//Outputs the first 4 keycodes using the USB GPIO channel 1
-				printHex (kbdbuf.keycode[0] + (kbdbuf.keycode[1]<<8) + (kbdbuf.keycode[2]<<16) + + (kbdbuf.keycode[3]<<24), 1);
+				printHex (kbdbuf.keycode[0] + (kbdbuf.keycode[1]<<8) + (kbdbuf.keycode[2]<<16) + (kbdbuf.keycode[3]<<24), 1);
+				printHex (kbdbuf.keycode[4] + (kbdbuf.keycode[5]<<8), 2);
 				//Modify to output the last 2 keycodes on channel 2.
 				xil_printf("\n");
 			}

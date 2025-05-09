@@ -18,3 +18,22 @@ platform generate
 platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
 platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
 platform generate -domains 
+platform active {nes}
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
+platform config -updatehw {/home/drew/ece385/NESV/nes.xsa}
+platform generate -domains 
