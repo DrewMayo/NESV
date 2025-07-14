@@ -10,8 +10,5 @@
 
 ![NESV running Super Mario Bros](smb.png)
 
-## Disclaimer
-
-This project was completed in just 4 weeks, with no regard for maintainability and no guarantees of correctness. Use at your own risk.
 
 
